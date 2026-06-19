@@ -1,0 +1,50 @@
+[0.026s] Invoking command in '/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/build/tuw_hardware_trinamic_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver -DCMAKE_INSTALL_PREFIX=/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver
+[0.210s] -- The C compiler identification is GNU 13.3.0
+[0.361s] -- The CXX compiler identification is GNU 13.3.0
+[0.399s] -- Detecting C compiler ABI info
+[0.600s] -- Detecting C compiler ABI info - done
+[0.618s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.619s] -- Detecting C compile features
+[0.620s] -- Detecting C compile features - done
+[0.640s] -- Detecting CXX compiler ABI info
+[0.838s] -- Detecting CXX compiler ABI info - done
+[0.856s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.857s] -- Detecting CXX compile features
+[0.858s] -- Detecting CXX compile features - done
+[0.876s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.151s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.424s] -- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.624s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.624s] -- Configured cppcheck include dirs: 
+[1.624s] -- Configured cppcheck exclude dirs and/or files: 
+[1.626s] -- Added test 'lint_cmake' to check CMake code style
+[1.628s] -- Added test 'uncrustify' to check C / C++ code style
+[1.628s] -- Configured uncrustify additional arguments: 
+[1.629s] -- Added test 'xmllint' to check XML markup files
+[1.632s] -- Configuring done (1.6s)
+[1.636s] -- Generating done (0.0s)
+[1.639s] -- Build files have been written to: /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/build/tuw_hardware_trinamic_driver
+[1.649s] Invoked command in '/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/build/tuw_hardware_trinamic_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver -DCMAKE_INSTALL_PREFIX=/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver
+[1.651s] Invoking command in '/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/build/tuw_hardware_trinamic_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/build/tuw_hardware_trinamic_driver -- -j14 -l14
+[1.729s] Invoked command in '/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/build/tuw_hardware_trinamic_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/build/tuw_hardware_trinamic_driver -- -j14 -l14
+[1.750s] Invoking command in '/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/build/tuw_hardware_trinamic_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/build/tuw_hardware_trinamic_driver
+[1.774s] -- Install configuration: ""
+[1.775s] -- Installing: /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver/include
+[1.775s] -- Installing: /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_connection.hpp
+[1.775s] -- Installing: /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_definitions.hpp
+[1.775s] -- Installing: /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver/share/ament_index/resource_index/package_run_dependencies/tuw_hardware_trinamic_driver
+[1.776s] -- Installing: /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver/share/ament_index/resource_index/parent_prefix_path/tuw_hardware_trinamic_driver
+[1.776s] -- Installing: /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver/share/tuw_hardware_trinamic_driver/environment/ament_prefix_path.sh
+[1.776s] -- Installing: /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver/share/tuw_hardware_trinamic_driver/environment/ament_prefix_path.dsv
+[1.776s] -- Installing: /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver/share/tuw_hardware_trinamic_driver/environment/path.sh
+[1.777s] -- Installing: /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver/share/tuw_hardware_trinamic_driver/environment/path.dsv
+[1.777s] -- Installing: /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver/share/tuw_hardware_trinamic_driver/local_setup.bash
+[1.777s] -- Installing: /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver/share/tuw_hardware_trinamic_driver/local_setup.sh
+[1.777s] -- Installing: /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver/share/tuw_hardware_trinamic_driver/local_setup.zsh
+[1.777s] -- Installing: /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver/share/tuw_hardware_trinamic_driver/local_setup.dsv
+[1.777s] -- Installing: /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver/share/tuw_hardware_trinamic_driver/package.dsv
+[1.777s] -- Installing: /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver/share/ament_index/resource_index/packages/tuw_hardware_trinamic_driver
+[1.778s] -- Installing: /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver/share/tuw_hardware_trinamic_driver/cmake/tuw_hardware_trinamic_driverConfig.cmake
+[1.778s] -- Installing: /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver/share/tuw_hardware_trinamic_driver/cmake/tuw_hardware_trinamic_driverConfig-version.cmake
+[1.778s] -- Installing: /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_trinamic_driver/share/tuw_hardware_trinamic_driver/package.xml
+[1.780s] Invoked command in '/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/build/tuw_hardware_trinamic_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/build/tuw_hardware_trinamic_driver

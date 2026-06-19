@@ -1,46 +1,126 @@
-#include "tuw_hardware_trinamic_connection.hpp"
+#include "tuw_hardware_trinamic_driver/tuw_hardware_trinamic_connection.hpp"
+#include "tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp"
+#include <cerrno>
+#include <boost/format.hpp>
 
 namespace tmcm1640 {
-    TMCM1640Connection::TMCM1640Connection(std::string_port) {
+    TMCM1640Connection::TMCM1640Connection(std::string port) {
+        // TODO proper errors: throw exceptions instead of some dumb return
         // initialize the serial connection
+        serial_port = open(port.c_str(), O_RDWR);
+
+        // check for errors
+        if (serial_port < 0) {
+            std::error_code error_code(errno, std::generic_category());
+            std::string error_message = (boost::format("Error %i from open: %s\n") % errno % strerror(errno)).str();
+            throw std::system_error(error_code, error_message.c_str());
+        }
+
+        struct termios tty;
+
+        if(tcgetattr(serial_port, &tty) != 0) {
+            close(serial_port);
+            std::error_code error_code(errno, std::generic_category());
+            std::string error_message = (boost::format("Error %i from tcgetattr: %s\n") % errno % strerror(errno)).str();
+            throw std::system_error(error_code, error_message.c_str());
+        }
+
+        // set the flags
+        // clear parity bit
+        tty.c_cflag &= ~PARENB;
+        // clear stop field
+        tty.c_cflag &= ~CSTOPB;
+        // clear size bit
+        tty.c_cflag &= ~CSIZE;
+        // set size bit
+        tty.c_cflag |= CS8;
+        // disable RTS/CTS hardware flow control
+        tty.c_cflag &= CRTSCTS;
+        // turn on read (and ignore control lines)
+        tty.c_cflag |= CREAD | CLOCAL;
+
+        tty.c_lflag &= ~ICANON;
+        // disable echo
+        tty.c_lflag &= ~ECHO;
+        // disable erasure
+        tty.c_lflag &= ~ECHOE;
+        // disable new-line echo
+        tty.c_lflag &= ~ECHONL;
+        // disable interpretation of INTR, QUIT ans SUSP
+        tty.c_lflag &= ~ISIG;
+        // disable s/w flow control
+        tty.c_iflag &= ~(IXON | IXOFF | IXANY);
+        // disable special handling of received bytes
+        tty.c_iflag &= ~(IGNBRK|BRKINT|PARMRK|ISTRIP|INLCR|IGNCR|ICRNL);
+
+        // prevent special interpretation of output bytes
+        tty.c_oflag &= ~OPOST;
+        // prevent conversion of new-line to carriage return
+        tty.c_oflag &= ~ONLCR;
+
+        // set wait for 9 bytes
+        tty.c_cc[VTIME] = 0;
+        tty.c_cc[VMIN] = 9;
+
+        cfsetispeed(&tty, B9600);
+        cfsetospeed(&tty, B9600);
+
+        if(tcsetattr(serial_port, TCSANOW, &tty) != 0) {
+            close(serial_port);
+            std::error_code error_code(errno, std::generic_category());
+            std::string error_message = (boost::format("Error %i from tcsetattr: %s\n") % errno % strerror(errno)).str();
+            throw std::system_error(error_code, error_message.c_str());
+        }
+
+
         // initialize the command_message
-        command_message[tmcm1640_cmd_format::TARGET] = TARGET;
-        command_message[tmcm1640_cmd_format::TYPE] = TYPE_DEFAULT;
-        command_message[tmcm1640_cmd_format::MOT_BANK] = MOTOR_NUMBER;
-        command_message[tmcm1640_cmd_format::VALUE_MSB] = VALUE_DEFAULT; // TODO funktioniert das so?
+        command_message[static_cast<int>(tmcm1640_cmd_format::CMD_TARGET)] = TARGET;
+        command_message[static_cast<int>(tmcm1640_cmd_format::TYPE)] = TYPE_DEFAULT;
+        command_message[static_cast<int>(tmcm1640_cmd_format::MOT_BANK)] = MOTOR_NUMBER;
+        command_message[static_cast<int>(tmcm1640_cmd_format::VALUE3)] = VALUE_DEFAULT;
+        command_message[static_cast<int>(tmcm1640_cmd_format::VALUE2)] = VALUE_DEFAULT;
+        command_message[static_cast<int>(tmcm1640_cmd_format::VALUE1)] = VALUE_DEFAULT;
+        command_message[static_cast<int>(tmcm1640_cmd_format::VALUE0)] = VALUE_DEFAULT;
     }
 
     TMCM1640Connection::~TMCM1640Connection() {
-        // TODO implement
         // close serial connection
+        close(serial_port);
     }
 
-    int TMCM1640Connection::communicate(tmcm1640_cmd cmd) {
+    int32_t TMCM1640Connection::communicate(tmcm1640_cmd cmd) {
         return communicate(cmd, TYPE_DEFAULT, VALUE_DEFAULT);
     }
 
-    int TMCM1640Connection::communicate(tmcm1640_cmd cmd, int value) {
+    int32_t TMCM1640Connection::communicate(tmcm1640_cmd cmd, int value) {
         return communicate(cmd, TYPE_DEFAULT, value);
     }
 
-    int TMCM1640Connection::communicate(tmcm1640_cmd cmd, int type, int value) {
-        // TODO implement
+    int32_t TMCM1640Connection::communicate(tmcm1640_cmd cmd, int type, int value) {
         // update the command_message
-        command_message[tmcm1640_cmd_format::CMD] = cmd;
-        command_message[tmcm1640_cmd_format::TYPE] = type;
-        command_message[tmcm1640_cmd_format::VALUE_MSB] = value;
+        command_message[static_cast<int>(tmcm1640_cmd_format::CMD)] = static_cast<uint8_t>(cmd);
+        command_message[static_cast<int>(tmcm1640_cmd_format::TYPE)] = type;
+        command_message[static_cast<int>(tmcm1640_cmd_format::VALUE3)] = value >> 24;
+        command_message[static_cast<int>(tmcm1640_cmd_format::VALUE2)] = value >> 16;
+        command_message[static_cast<int>(tmcm1640_cmd_format::VALUE1)] = value >> 8;
+        command_message[static_cast<int>(tmcm1640_cmd_format::VALUE0)] = value;
 
         // calculate the checksum
-        command_message[tmcm1640_cmd_format::CHECKSUM] = calc_checksum();
+        command_message[static_cast<int>(tmcm1640_cmd_format::CHECKSUM)] = calc_checksum(command_message);
 
         // send the message and receive the tmcm1640's answer
         if (!send_and_receive()) {
-            return ERROR; // TODO implement properly
+            std::error_code error_code(errno, std::generic_category());
+            std::string error_message = "Communication error: could not receive reply";
+            throw std::system_error(error_code, error_message.c_str());
         }
 
         // check the reply
-        if (!(check_reply() == tmcm1640_status_codes::OK) && !(check_reply() == tmcm1640_status_codes::CMD_LOADED)) { // TODO do I need CONFIG_LOCKED?
-            return ERROR; // TODO implement properly
+        uint8_t reply_status = check_reply();
+        if (!(reply_status == static_cast<uint8_t>(tmcm1640_status_codes::OK)) && !(reply_status == static_cast<uint8_t>(tmcm1640_status_codes::CMD_LOADED))) { // TODO do I need CONFIG_LOCKED?
+            std::error_code error_code(errno, std::generic_category());
+            std::string error_message = (boost::format("Reply wrong. Status: %i") % reply_status).str();
+            throw std::system_error(error_code, error_message.c_str());
         }
 
         // return the value
@@ -55,11 +135,18 @@ namespace tmcm1640 {
         return value;
     }
 
-    tmcm1640_status_codes TMCM1640Connection::send_and_receive() {
-        // TODO implement
+    bool TMCM1640Connection::send_and_receive() {
         // send command_message using the serial connection
+        write(serial_port, command_message.data(), 9);
+
         // receive the reply sent on the serial connection and store it into reply_message
-        // TODO return whether it worked (how???? and with which type????)
+        int num_bytes = read(serial_port, reply_message.data(), 9);
+
+        if(num_bytes < 0) {
+            return false;
+        }
+
+        else true;
     }
 
     std::uint8_t TMCM1640Connection::calc_checksum(std::array<std::uint8_t, 9> msg) {
@@ -73,20 +160,22 @@ namespace tmcm1640 {
         return checksum;
     }
 
-    tmcm1640_status_codes TMCM1640Connection::check_reply() {
-        // TODO implement
+    uint8_t TMCM1640Connection::check_reply() {
         // check whether the reply has the correct checksum
-        if(!(calc_checksum == reply_message[tmcm1640_reply_format::CHECKSUM])) {
-            return ERROR;
+        if(!(calc_checksum(reply_message) == reply_message[static_cast<int>(tmcm1640_reply_format::CHECKSUM)])) {
+            return static_cast<int>(tmcm1640_status_codes::CHECKSUM_ERROR);
         }
 
+        set_value();
+
         // if yes, return the status code
-        return reply_message[tmcm1640_reply_format::STATUS];
+        return reply_message[static_cast<int>(tmcm1640_reply_format::STATUS)];
     }
 
     void TMCM1640Connection::set_value() {
-        value = reply_message[tmcm1640_reply_format::VALUE_MSB]; // TODO set value size to 4 bytes exactly
-        // TODO kann man sicher vernünftiger schreiben
-        // TODO vllt nicht mit Methode sondern mit pointer auf VALUE_MSB?
+        value = (reply_message[static_cast<int>(tmcm1640_reply_format::VALUE3)] << 24 |
+                 reply_message[static_cast<int>(tmcm1640_reply_format::VALUE2)] << 16 |
+                 reply_message[static_cast<int>(tmcm1640_reply_format::VALUE1)] << 8  |
+                 reply_message[static_cast<int>(tmcm1640_reply_format::VALUE0)]);
     }
 }

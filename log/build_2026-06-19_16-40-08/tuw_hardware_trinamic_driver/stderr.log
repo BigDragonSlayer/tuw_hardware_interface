@@ -1,0 +1,394 @@
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:[m[K In constructor ‘[01m[Ktmcm1640::TMCM1640Connection::[01;32m[KTMCM1640Connection[m[K(std::string)[m[K’:
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:8:28:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kstd::string[m[K’ {aka ‘[01m[Kstd::__cxx11::basic_string<char>[m[K’} to ‘[01m[Kconst char*[m[K’
+    8 |         serial_port = open([01;31m[Kport[m[K, O_RDWR);
+      |                            [01;31m[K^~~~[m[K
+      |                            [01;31m[K|[m[K
+      |                            [01;31m[Kstd::string {aka std::__cxx11::basic_string<char>}[m[K
+In file included from [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_connection.hpp:7[m[K,
+                 from [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:1[m[K:
+[01m[K/usr/include/fcntl.h:209:30:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kint[01;32m[K open[m[K(const char*, int, ...)[m[K’
+  209 | extern int open ([01;36m[Kconst char *__file[m[K, int __oflag, ...) __nonnull ((1));
+      |                  [01;36m[K~~~~~~~~~~~~^~~~~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:13:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kboost[m[K’ has not been declared
+   13 |             std::string error_message = ([01;31m[Kboost[m[K::format("Error %i from open: %s\n", errno, strerror(errno)).str();
+      |                                          [01;31m[K^~~~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:13:91:[m[K [01;31m[Kerror: [m[K‘[01m[Kstrerror[m[K’ was not declared in this scope; did you mean ‘[01m[Kstderr[m[K’?
+   13 |             std::string error_message = (boost::format("Error %i from open: %s\n", errno, [01;31m[Kstrerror[m[K(errno)).str();
+      |                                                                                           [01;31m[K^~~~~~~~[m[K
+      |                                                                                           [32m[Kstderr[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:13:113:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K;[m[K’ token
+   13 |             std::string error_message = [34m[K([m[Kboost::format("Error %i from open: %s\n", errno, strerror(errno)).str()[01;31m[K;[m[K
+      |                                         [34m[K~[m[K                                                                       [01;31m[K^[m[K
+      |                                                                                                                 [32m[K)[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:22:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kboost[m[K’ has not been declared
+   22 |             std::string error_message = ([01;31m[Kboost[m[K::format("Error %i from tcgetattr: %s\n", errno, strerror(errno)).str();
+      |                                          [01;31m[K^~~~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:22:96:[m[K [01;31m[Kerror: [m[K‘[01m[Kstrerror[m[K’ was not declared in this scope; did you mean ‘[01m[Kstderr[m[K’?
+   22 |             std::string error_message = (boost::format("Error %i from tcgetattr: %s\n", errno, [01;31m[Kstrerror[m[K(errno)).str();
+      |                                                                                                [01;31m[K^~~~~~~~[m[K
+      |                                                                                                [32m[Kstderr[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:22:118:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K;[m[K’ token
+   22 |             std::string error_message = [34m[K([m[Kboost::format("Error %i from tcgetattr: %s\n", errno, strerror(errno)).str()[01;31m[K;[m[K
+      |                                         [34m[K~[m[K                                                                            [01;31m[K^[m[K
+      |                                                                                                                      [32m[K)[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:66:21:[m[K [01;31m[Kerror: [m[Ktoo many arguments to function ‘[01m[Kint[01;32m[K tcgetattr[m[K(int, termios*)[m[K’
+   66 |         if([01;31m[Ktcgetattr(serial_port, TCSANOW, &tty)[m[K != 0) {
+      |            [01;31m[K~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_connection.hpp:9[m[K:
+[01m[K/usr/include/termios.h:66:12:[m[K [01;36m[Knote: [m[Kdeclared here
+   66 | extern int [01;36m[Ktcgetattr[m[K (int __fd, struct termios *__termios_p) __THROW;
+      |            [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:69:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kboost[m[K’ has not been declared
+   69 |             std::string error_message = ([01;31m[Kboost[m[K::format("Error %i from tcsetattr: %s\n", errno, strerror(errno)).str();
+      |                                          [01;31m[K^~~~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:69:96:[m[K [01;31m[Kerror: [m[K‘[01m[Kstrerror[m[K’ was not declared in this scope; did you mean ‘[01m[Kstderr[m[K’?
+   69 |             std::string error_message = (boost::format("Error %i from tcsetattr: %s\n", errno, [01;31m[Kstrerror[m[K(errno)).str();
+      |                                                                                                [01;31m[K^~~~~~~~[m[K
+      |                                                                                                [32m[Kstderr[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:69:118:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K;[m[K’ token
+   69 |             std::string error_message = [34m[K([m[Kboost::format("Error %i from tcsetattr: %s\n", errno, strerror(errno)).str()[01;31m[K;[m[K
+      |                                         [34m[K~[m[K                                                                            [01;31m[K^[m[K
+      |                                                                                                                      [32m[K)[m[K
+In file included from [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_connection.hpp:4[m[K:
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:146:20:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before numeric constant
+  146 |     #define TARGET [01;31m[K1[m[K
+      |                    [01;31m[K^[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:75:46:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KTARGET[m[K’
+   75 |         command_message[tmcm1640_cmd_format::[01;36m[KTARGET[m[K] = TARGET;
+      |                                              [01;36m[K^~~~~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:75:44:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K][m[K’ before numeric constant
+   75 |         command_message[tmcm1640_cmd_format[01;31m[K:[m[K:TARGET] = TARGET;
+      |                                            [01;31m[K^[m[K
+      |                                            [32m[K][m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:76:24:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kstd::array<unsigned char, 9>[m[K’ and ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’)
+   76 |         command_message[01;31m[K[[m[Ktmcm1640_cmd_format::TYPE] = TYPE_DEFAULT;
+      |                        [01;31m[K^[m[K
+In file included from [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_connection.hpp:13[m[K:
+[01m[K/usr/include/c++/13/array:200:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; reference = unsigned char&; size_type = long unsigned int][m[K[m[K’
+  200 |       [01;36m[Koperator[m[K[](size_type __n) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:200:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  200 |       operator[]([01;36m[Ksize_type __n[m[K) noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/13/array:208:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) const [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; const_reference = const unsigned char&; size_type = long unsigned int][m[K[m[K’
+  208 |       [01;36m[Koperator[m[K[](size_type __n) const noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:208:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  208 |       operator[]([01;36m[Ksize_type __n[m[K) const noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:77:24:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kstd::array<unsigned char, 9>[m[K’ and ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’)
+   77 |         command_message[01;31m[K[[m[Ktmcm1640_cmd_format::MOT_BANK] = MOTOR_NUMBER;
+      |                        [01;31m[K^[m[K
+[01m[K/usr/include/c++/13/array:200:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; reference = unsigned char&; size_type = long unsigned int][m[K[m[K’
+  200 |       [01;36m[Koperator[m[K[](size_type __n) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:200:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  200 |       operator[]([01;36m[Ksize_type __n[m[K) noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/13/array:208:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) const [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; const_reference = const unsigned char&; size_type = long unsigned int][m[K[m[K’
+  208 |       [01;36m[Koperator[m[K[](size_type __n) const noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:208:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  208 |       operator[]([01;36m[Ksize_type __n[m[K) const noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:78:24:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kstd::array<unsigned char, 9>[m[K’ and ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’)
+   78 |         command_message[01;31m[K[[m[Ktmcm1640_cmd_format::VALUE3] = VALUE_DEFAULT;
+      |                        [01;31m[K^[m[K
+[01m[K/usr/include/c++/13/array:200:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; reference = unsigned char&; size_type = long unsigned int][m[K[m[K’
+  200 |       [01;36m[Koperator[m[K[](size_type __n) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:200:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  200 |       operator[]([01;36m[Ksize_type __n[m[K) noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/13/array:208:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) const [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; const_reference = const unsigned char&; size_type = long unsigned int][m[K[m[K’
+  208 |       [01;36m[Koperator[m[K[](size_type __n) const noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:208:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  208 |       operator[]([01;36m[Ksize_type __n[m[K) const noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:79:24:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kstd::array<unsigned char, 9>[m[K’ and ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’)
+   79 |         command_message[01;31m[K[[m[Ktmcm1640_cmd_format::VALUE2] = VALUE_DEFAULT;
+      |                        [01;31m[K^[m[K
+[01m[K/usr/include/c++/13/array:200:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; reference = unsigned char&; size_type = long unsigned int][m[K[m[K’
+  200 |       [01;36m[Koperator[m[K[](size_type __n) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:200:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  200 |       operator[]([01;36m[Ksize_type __n[m[K) noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/13/array:208:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) const [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; const_reference = const unsigned char&; size_type = long unsigned int][m[K[m[K’
+  208 |       [01;36m[Koperator[m[K[](size_type __n) const noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:208:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  208 |       operator[]([01;36m[Ksize_type __n[m[K) const noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:80:24:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kstd::array<unsigned char, 9>[m[K’ and ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’)
+   80 |         command_message[01;31m[K[[m[Ktmcm1640_cmd_format::VALUE1] = VALUE_DEFAULT;
+      |                        [01;31m[K^[m[K
+[01m[K/usr/include/c++/13/array:200:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; reference = unsigned char&; size_type = long unsigned int][m[K[m[K’
+  200 |       [01;36m[Koperator[m[K[](size_type __n) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:200:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  200 |       operator[]([01;36m[Ksize_type __n[m[K) noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/13/array:208:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) const [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; const_reference = const unsigned char&; size_type = long unsigned int][m[K[m[K’
+  208 |       [01;36m[Koperator[m[K[](size_type __n) const noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:208:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  208 |       operator[]([01;36m[Ksize_type __n[m[K) const noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:81:24:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kstd::array<unsigned char, 9>[m[K’ and ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’)
+   81 |         command_message[01;31m[K[[m[Ktmcm1640_cmd_format::VALUE0] = VALUE_DEFAULT;
+      |                        [01;31m[K^[m[K
+[01m[K/usr/include/c++/13/array:200:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; reference = unsigned char&; size_type = long unsigned int][m[K[m[K’
+  200 |       [01;36m[Koperator[m[K[](size_type __n) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:200:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  200 |       operator[]([01;36m[Ksize_type __n[m[K) noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/13/array:208:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) const [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; const_reference = const unsigned char&; size_type = long unsigned int][m[K[m[K’
+  208 |       [01;36m[Koperator[m[K[](size_type __n) const noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:208:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  208 |       operator[]([01;36m[Ksize_type __n[m[K) const noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:[m[K In member function ‘[01m[Kint32_t tmcm1640::TMCM1640Connection::[01;32m[Kcommunicate[m[K(tmcm1640::tmcm1640_cmd, int, int)[m[K’:
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:99:24:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kstd::array<unsigned char, 9>[m[K’ and ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’)
+   99 |         command_message[01;31m[K[[m[Ktmcm1640_cmd_format::CMD] = cmd;
+      |                        [01;31m[K^[m[K
+[01m[K/usr/include/c++/13/array:200:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; reference = unsigned char&; size_type = long unsigned int][m[K[m[K’
+  200 |       [01;36m[Koperator[m[K[](size_type __n) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:200:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  200 |       operator[]([01;36m[Ksize_type __n[m[K) noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/13/array:208:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) const [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; const_reference = const unsigned char&; size_type = long unsigned int][m[K[m[K’
+  208 |       [01;36m[Koperator[m[K[](size_type __n) const noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:208:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  208 |       operator[]([01;36m[Ksize_type __n[m[K) const noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:100:24:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kstd::array<unsigned char, 9>[m[K’ and ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’)
+  100 |         command_message[01;31m[K[[m[Ktmcm1640_cmd_format::TYPE] = type;
+      |                        [01;31m[K^[m[K
+[01m[K/usr/include/c++/13/array:200:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; reference = unsigned char&; size_type = long unsigned int][m[K[m[K’
+  200 |       [01;36m[Koperator[m[K[](size_type __n) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:200:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  200 |       operator[]([01;36m[Ksize_type __n[m[K) noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/13/array:208:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) const [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; const_reference = const unsigned char&; size_type = long unsigned int][m[K[m[K’
+  208 |       [01;36m[Koperator[m[K[](size_type __n) const noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:208:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  208 |       operator[]([01;36m[Ksize_type __n[m[K) const noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:101:24:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kstd::array<unsigned char, 9>[m[K’ and ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’)
+  101 |         command_message[01;31m[K[[m[Ktmcm1640_cmd_format::VALUE3] = value >> 24;
+      |                        [01;31m[K^[m[K
+[01m[K/usr/include/c++/13/array:200:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; reference = unsigned char&; size_type = long unsigned int][m[K[m[K’
+  200 |       [01;36m[Koperator[m[K[](size_type __n) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:200:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  200 |       operator[]([01;36m[Ksize_type __n[m[K) noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/13/array:208:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) const [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; const_reference = const unsigned char&; size_type = long unsigned int][m[K[m[K’
+  208 |       [01;36m[Koperator[m[K[](size_type __n) const noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:208:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  208 |       operator[]([01;36m[Ksize_type __n[m[K) const noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:102:24:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kstd::array<unsigned char, 9>[m[K’ and ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’)
+  102 |         command_message[01;31m[K[[m[Ktmcm1640_cmd_format::VALUE2] = value >> 16;
+      |                        [01;31m[K^[m[K
+[01m[K/usr/include/c++/13/array:200:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; reference = unsigned char&; size_type = long unsigned int][m[K[m[K’
+  200 |       [01;36m[Koperator[m[K[](size_type __n) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:200:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  200 |       operator[]([01;36m[Ksize_type __n[m[K) noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/13/array:208:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) const [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; const_reference = const unsigned char&; size_type = long unsigned int][m[K[m[K’
+  208 |       [01;36m[Koperator[m[K[](size_type __n) const noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:208:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  208 |       operator[]([01;36m[Ksize_type __n[m[K) const noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:103:24:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kstd::array<unsigned char, 9>[m[K’ and ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’)
+  103 |         command_message[01;31m[K[[m[Ktmcm1640_cmd_format::VALUE1] = value >> 8;
+      |                        [01;31m[K^[m[K
+[01m[K/usr/include/c++/13/array:200:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; reference = unsigned char&; size_type = long unsigned int][m[K[m[K’
+  200 |       [01;36m[Koperator[m[K[](size_type __n) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:200:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  200 |       operator[]([01;36m[Ksize_type __n[m[K) noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/13/array:208:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) const [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; const_reference = const unsigned char&; size_type = long unsigned int][m[K[m[K’
+  208 |       [01;36m[Koperator[m[K[](size_type __n) const noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:208:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  208 |       operator[]([01;36m[Ksize_type __n[m[K) const noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:104:24:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kstd::array<unsigned char, 9>[m[K’ and ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’)
+  104 |         command_message[01;31m[K[[m[Ktmcm1640_cmd_format::VALUE0] = value;
+      |                        [01;31m[K^[m[K
+[01m[K/usr/include/c++/13/array:200:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; reference = unsigned char&; size_type = long unsigned int][m[K[m[K’
+  200 |       [01;36m[Koperator[m[K[](size_type __n) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:200:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  200 |       operator[]([01;36m[Ksize_type __n[m[K) noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/13/array:208:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) const [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; const_reference = const unsigned char&; size_type = long unsigned int][m[K[m[K’
+  208 |       [01;36m[Koperator[m[K[](size_type __n) const noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:208:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  208 |       operator[]([01;36m[Ksize_type __n[m[K) const noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:107:24:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kstd::array<unsigned char, 9>[m[K’ and ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’)
+  107 |         command_message[01;31m[K[[m[Ktmcm1640_cmd_format::CHECKSUM] = calc_checksum();
+      |                        [01;31m[K^[m[K
+[01m[K/usr/include/c++/13/array:200:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; reference = unsigned char&; size_type = long unsigned int][m[K[m[K’
+  200 |       [01;36m[Koperator[m[K[](size_type __n) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:200:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  200 |       operator[]([01;36m[Ksize_type __n[m[K) noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/13/array:208:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) const [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; const_reference = const unsigned char&; size_type = long unsigned int][m[K[m[K’
+  208 |       [01;36m[Koperator[m[K[](size_type __n) const noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:208:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  208 |       operator[]([01;36m[Ksize_type __n[m[K) const noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:107:71:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ktmcm1640::TMCM1640Connection::calc_checksum()[m[K’
+  107 |         command_message[tmcm1640_cmd_format::CHECKSUM] = [01;31m[Kcalc_checksum()[m[K;
+      |                                                          [01;31m[K~~~~~~~~~~~~~^~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_connection.hpp:31:26:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kuint8_t tmcm1640::TMCM1640Connection::[01;32m[Kcalc_checksum[m[K(std::array<unsigned char, 9>)[m[K’
+   31 |             std::uint8_t [01;36m[Kcalc_checksum[m[K(std::array<std::uint8_t, 9> msg);
+      |                          [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_connection.hpp:31:26:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:120:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kboost[m[K’ has not been declared
+  120 |             std::string error_message = ([01;31m[Kboost[m[K::format("Reply wrong: %i", reply_status).str();
+      |                                          [01;31m[K^~~~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:120:94:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K;[m[K’ token
+  120 |             std::string error_message = [34m[K([m[Kboost::format("Reply wrong: %i", reply_status).str()[01;31m[K;[m[K
+      |                                         [34m[K~[m[K                                                    [01;31m[K^[m[K
+      |                                                                                              [32m[K)[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:[m[K In member function ‘[01m[Kbool tmcm1640::TMCM1640Connection::[01;32m[Ksend_and_receive[m[K()[m[K’:
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:138:28:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kstd::array<unsigned char, 9>[m[K’ to ‘[01m[Kconst void*[m[K’
+  138 |         write(serial_port, [01;31m[Kcommand_message[m[K, 9);
+      |                            [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                            [01;31m[K|[m[K
+      |                            [01;31m[Kstd::array<unsigned char, 9>[m[K
+In file included from [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_connection.hpp:10[m[K:
+[01m[K/usr/include/unistd.h:378:45:[m[K [01;36m[Knote: [m[K  initializing argument 2 of ‘[01m[Kssize_t[01;32m[K write[m[K(int, const void*, size_t)[m[K’
+  378 | extern ssize_t write (int __fd, [01;36m[Kconst void *__buf[m[K, size_t __n) __wur
+      |                                 [01;36m[K~~~~~~~~~~~~^~~~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:141:43:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kstd::array<unsigned char, 9>[m[K’ to ‘[01m[Kvoid*[m[K’
+  141 |         int num_bytes = read(serial_port, [01;31m[Kreply_message[m[K, 9);
+      |                                           [01;31m[K^~~~~~~~~~~~~[m[K
+      |                                           [01;31m[K|[m[K
+      |                                           [01;31m[Kstd::array<unsigned char, 9>[m[K
+[01m[K/usr/include/unistd.h:371:38:[m[K [01;36m[Knote: [m[K  initializing argument 2 of ‘[01m[Kssize_t[01;32m[K read[m[K(int, void*, size_t)[m[K’
+  371 | extern ssize_t read (int __fd, [01;36m[Kvoid *__buf[m[K, size_t __nbytes) __wur
+      |                                [01;36m[K~~~~~~^~~~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:147:18:[m[K [01;35m[Kwarning: [m[Kstatement has no effect [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+  147 |         else true[01;35m[K;[m[K
+      |                  [01;35m[K^[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:[m[K In member function ‘[01m[Ktmcm1640::tmcm1640_status_codes tmcm1640::TMCM1640Connection::[01;32m[Kcheck_reply[m[K()[m[K’:
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:163:44:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kstd::array<unsigned char, 9>[m[K’ and ‘[01m[Ktmcm1640::tmcm1640_reply_format[m[K’)
+  163 |         if(!(calc_checksum == reply_message[01;31m[K[[m[Ktmcm1640_reply_format::CHECKSUM])) {
+      |                                            [01;31m[K^[m[K
+[01m[K/usr/include/c++/13/array:200:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; reference = unsigned char&; size_type = long unsigned int][m[K[m[K’
+  200 |       [01;36m[Koperator[m[K[](size_type __n) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:200:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_reply_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  200 |       operator[]([01;36m[Ksize_type __n[m[K) noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/13/array:208:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) const [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; const_reference = const unsigned char&; size_type = long unsigned int][m[K[m[K’
+  208 |       [01;36m[Koperator[m[K[](size_type __n) const noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:208:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_reply_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  208 |       operator[]([01;36m[Ksize_type __n[m[K) const noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:170:29:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kstd::array<unsigned char, 9>[m[K’ and ‘[01m[Ktmcm1640::tmcm1640_reply_format[m[K’)
+  170 |         return reply_message[01;31m[K[[m[Ktmcm1640_reply_format::STATUS];
+      |                             [01;31m[K^[m[K
+[01m[K/usr/include/c++/13/array:200:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; reference = unsigned char&; size_type = long unsigned int][m[K[m[K’
+  200 |       [01;36m[Koperator[m[K[](size_type __n) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:200:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_reply_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  200 |       operator[]([01;36m[Ksize_type __n[m[K) noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/13/array:208:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) const [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; const_reference = const unsigned char&; size_type = long unsigned int][m[K[m[K’
+  208 |       [01;36m[Koperator[m[K[](size_type __n) const noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:208:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_reply_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  208 |       operator[]([01;36m[Ksize_type __n[m[K) const noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:[m[K In member function ‘[01m[Kvoid tmcm1640::TMCM1640Connection::[01;32m[Kset_value[m[K()[m[K’:
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:174:31:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kstd::array<unsigned char, 9>[m[K’ and ‘[01m[Ktmcm1640::tmcm1640_reply_format[m[K’)
+  174 |         value = (reply_message[01;31m[K[[m[Ktmcm1640_reply_format::VALUE3] << 24 |
+      |                               [01;31m[K^[m[K
+[01m[K/usr/include/c++/13/array:200:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; reference = unsigned char&; size_type = long unsigned int][m[K[m[K’
+  200 |       [01;36m[Koperator[m[K[](size_type __n) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:200:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_reply_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  200 |       operator[]([01;36m[Ksize_type __n[m[K) noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/13/array:208:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) const [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; const_reference = const unsigned char&; size_type = long unsigned int][m[K[m[K’
+  208 |       [01;36m[Koperator[m[K[](size_type __n) const noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:208:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_reply_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  208 |       operator[]([01;36m[Ksize_type __n[m[K) const noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:175:31:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kstd::array<unsigned char, 9>[m[K’ and ‘[01m[Ktmcm1640::tmcm1640_reply_format[m[K’)
+  175 |                  reply_message[01;31m[K[[m[Ktmcm1640_reply_format::VALUE2] << 16 |
+      |                               [01;31m[K^[m[K
+[01m[K/usr/include/c++/13/array:200:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; reference = unsigned char&; size_type = long unsigned int][m[K[m[K’
+  200 |       [01;36m[Koperator[m[K[](size_type __n) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:200:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_reply_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  200 |       operator[]([01;36m[Ksize_type __n[m[K) noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/13/array:208:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) const [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; const_reference = const unsigned char&; size_type = long unsigned int][m[K[m[K’
+  208 |       [01;36m[Koperator[m[K[](size_type __n) const noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:208:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_reply_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  208 |       operator[]([01;36m[Ksize_type __n[m[K) const noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:176:31:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kstd::array<unsigned char, 9>[m[K’ and ‘[01m[Ktmcm1640::tmcm1640_reply_format[m[K’)
+  176 |                  reply_message[01;31m[K[[m[Ktmcm1640_reply_format::VALUE1] << 8  |
+      |                               [01;31m[K^[m[K
+[01m[K/usr/include/c++/13/array:200:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; reference = unsigned char&; size_type = long unsigned int][m[K[m[K’
+  200 |       [01;36m[Koperator[m[K[](size_type __n) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:200:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_reply_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  200 |       operator[]([01;36m[Ksize_type __n[m[K) noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/13/array:208:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) const [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; const_reference = const unsigned char&; size_type = long unsigned int][m[K[m[K’
+  208 |       [01;36m[Koperator[m[K[](size_type __n) const noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:208:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_reply_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  208 |       operator[]([01;36m[Ksize_type __n[m[K) const noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:177:31:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator[][m[K’ (operand types are ‘[01m[Kstd::array<unsigned char, 9>[m[K’ and ‘[01m[Ktmcm1640::tmcm1640_reply_format[m[K’)
+  177 |                  reply_message[01;31m[K[[m[Ktmcm1640_reply_format::VALUE0]);
+      |                               [01;31m[K^[m[K
+[01m[K/usr/include/c++/13/array:200:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; reference = unsigned char&; size_type = long unsigned int][m[K[m[K’
+  200 |       [01;36m[Koperator[m[K[](size_type __n) noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:200:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_reply_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  200 |       operator[]([01;36m[Ksize_type __n[m[K) noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/13/array:208:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr const std::array<_Tp, _Nm>::value_type& std::array<_Tp, _Nm>::[01;32m[Koperator[][m[K(size_type) const [35m[K[with _Tp = unsigned char; long unsigned int _Nm = 9; const_reference = const unsigned char&; size_type = long unsigned int][m[K[m[K’
+  208 |       [01;36m[Koperator[m[K[](size_type __n) const noexcept
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/13/array:208:28:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Ktmcm1640::tmcm1640_reply_format[m[K’ to ‘[01m[Kstd::array<unsigned char, 9>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’}
+  208 |       operator[]([01;36m[Ksize_type __n[m[K) const noexcept
+      |                  [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:[m[K In member function ‘[01m[Kbool tmcm1640::TMCM1640Connection::[01;32m[Ksend_and_receive[m[K()[m[K’:
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:148:5:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+  148 |     [01;35m[K}[m[K
+      |     [01;35m[K^[m[K
+gmake[2]: *** [CMakeFiles/trinamic_test_node.dir/build.make:90: CMakeFiles/trinamic_test_node.dir/src/tuw_hardware_trinamic_connection.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/trinamic_test_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

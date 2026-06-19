@@ -1,0 +1,7 @@
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:[m[K In member function ‘[01m[Kbool tmcm1640::TMCM1640Connection::[01;32m[Ksend_and_receive[m[K()[m[K’:
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:149:18:[m[K [01;35m[Kwarning: [m[Kstatement has no effect [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+  149 |         else true[01;35m[K;[m[K
+      |                  [01;35m[K^[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:150:5:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+  150 |     [01;35m[K}[m[K
+      |     [01;35m[K^[m[K

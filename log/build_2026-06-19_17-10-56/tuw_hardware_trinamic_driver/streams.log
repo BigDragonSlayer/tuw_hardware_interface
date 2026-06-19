@@ -1,0 +1,215 @@
+[0.023s] Invoking command in '/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/build/tuw_hardware_trinamic_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/build/tuw_hardware_trinamic_driver -- -j14 -l14
+[0.153s] [ 66%] [32mBuilding CXX object CMakeFiles/trinamic_test_node.dir/src/tuw_hardware_trinamic_connection.cpp.o[0m
+[0.153s] [ 66%] [32mBuilding CXX object CMakeFiles/trinamic_test_node.dir/src/test_node.cpp.o[0m
+[0.426s] In file included from [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_connection.hpp:4[m[K,
+[0.426s]                  from [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:1[m[K:
+[0.426s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:11:16:[m[K [01;31m[Kerror: [m[Kexpected identifier before numeric constant
+[0.426s]    11 | #define TARGET [01;31m[K1[m[K
+[0.426s]       |                [01;31m[K^[m[K
+[0.426s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:122:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KTARGET[m[K’
+[0.427s]   122 |     [01;36m[KTARGET[m[K    = 0,     // Module address
+[0.427s]       |     [01;36m[K^~~~~~[m[K
+[0.427s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:11:16:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ before numeric constant
+[0.427s]    11 | #define TARGET [01;31m[K1[m[K
+[0.427s]       |                [01;31m[K^[m[K
+[0.427s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:122:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KTARGET[m[K’
+[0.427s]   122 |     [01;36m[KTARGET[m[K    = 0,     // Module address
+[0.428s]       |     [01;36m[K^~~~~~[m[K
+[0.428s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:121:46:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[0.428s]   121 |     enum class tmcm1640_cmd_format : uint8_t [01;36m[K{[m[K
+[0.428s]       |                                              [01;36m[K^[m[K
+[0.428s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:11:16:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before numeric constant
+[0.428s]    11 | #define TARGET [01;31m[K1[m[K
+[0.428s]       |                [01;31m[K^[m[K
+[0.428s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:122:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KTARGET[m[K’
+[0.429s]   122 |     [01;36m[KTARGET[m[K    = 0,     // Module address
+[0.429s]       |     [01;36m[K^~~~~~[m[K
+[0.429s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:11:16:[m[K [01;31m[Kerror: [m[Kexpected identifier before numeric constant
+[0.429s]    11 | #define TARGET [01;31m[K1[m[K
+[0.429s]       |                [01;31m[K^[m[K
+[0.429s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:137:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KTARGET[m[K’
+[0.429s]   137 |     [01;36m[KTARGET[m[K     = 1,    // Module address
+[0.429s]       |     [01;36m[K^~~~~~[m[K
+[0.430s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:11:16:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ before numeric constant
+[0.430s]    11 | #define TARGET [01;31m[K1[m[K
+[0.430s]       |                [01;31m[K^[m[K
+[0.430s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:137:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KTARGET[m[K’
+[0.430s]   137 |     [01;36m[KTARGET[m[K     = 1,    // Module address
+[0.430s]       |     [01;36m[K^~~~~~[m[K
+[0.430s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:135:48:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[0.430s]   135 |     enum class tmcm1640_reply_format : uint8_t [01;36m[K{[m[K
+[0.431s]       |                                                [01;36m[K^[m[K
+[0.431s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:11:16:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before numeric constant
+[0.431s]    11 | #define TARGET [01;31m[K1[m[K
+[0.431s]       |                [01;31m[K^[m[K
+[0.431s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:137:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KTARGET[m[K’
+[0.431s]   137 |     [01;36m[KTARGET[m[K     = 1,    // Module address
+[0.431s]       |     [01;36m[K^~~~~~[m[K
+[0.431s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:147:5:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[0.432s]   147 |     [01;31m[K}[m[K;
+[0.432s]       |     [01;31m[K^[m[K
+[0.432s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:150:1:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[0.432s]   150 | [01;31m[K}[m[K
+[0.432s]       | [01;31m[K^[m[K
+[0.966s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:[m[K In constructor ‘[01m[Ktmcm1640::TMCM1640Connection::[01;32m[KTMCM1640Connection[m[K(std::string)[m[K’:
+[0.967s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:11:16:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before numeric constant
+[0.967s]    11 | #define TARGET [01;31m[K1[m[K
+[0.967s]       |                [01;31m[K^[m[K
+[0.967s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:77:63:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KTARGET[m[K’
+[0.968s]    77 |         command_message[static_cast<int>(tmcm1640_cmd_format::[01;36m[KTARGET[m[K)] = TARGET;
+[0.968s]       |                                                               [01;36m[K^~~~~~[m[K
+[0.968s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:77:61:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before numeric constant
+[0.968s]    77 |         command_message[static_cast<int>(tmcm1640_cmd_format[01;31m[K:[m[K:TARGET)] = TARGET;
+[0.968s]       |                                                             [01;31m[K^[m[K
+[0.968s]       |                                                             [32m[K)[m[K
+[0.969s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:77:61:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K][m[K’ before numeric constant
+[0.969s]    77 |         command_message[static_cast<int>(tmcm1640_cmd_format[01;31m[K:[m[K:TARGET)] = TARGET;
+[0.969s]       |                                                             [01;31m[K^[m[K
+[0.969s]       |                                                             [32m[K][m[K
+[0.969s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:78:63:[m[K [01;31m[Kerror: [m[K‘[01m[KTYPE[m[K’ is not a member of ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’
+[0.970s]    78 |         command_message[static_cast<int>(tmcm1640_cmd_format::[01;31m[KTYPE[m[K)] = TYPE_DEFAULT;
+[0.970s]       |                                                               [01;31m[K^~~~[m[K
+[0.970s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:79:63:[m[K [01;31m[Kerror: [m[K‘[01m[KMOT_BANK[m[K’ is not a member of ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’
+[0.970s]    79 |         command_message[static_cast<int>(tmcm1640_cmd_format::[01;31m[KMOT_BANK[m[K)] = MOTOR_NUMBER;
+[0.970s]       |                                                               [01;31m[K^~~~~~~~[m[K
+[0.970s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:80:63:[m[K [01;31m[Kerror: [m[K‘[01m[KVALUE3[m[K’ is not a member of ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’
+[0.971s]    80 |         command_message[static_cast<int>(tmcm1640_cmd_format::[01;31m[KVALUE3[m[K)] = VALUE_DEFAULT;
+[0.971s]       |                                                               [01;31m[K^~~~~~[m[K
+[0.971s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:81:63:[m[K [01;31m[Kerror: [m[K‘[01m[KVALUE2[m[K’ is not a member of ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’
+[0.971s]    81 |         command_message[static_cast<int>(tmcm1640_cmd_format::[01;31m[KVALUE2[m[K)] = VALUE_DEFAULT;
+[0.971s]       |                                                               [01;31m[K^~~~~~[m[K
+[0.971s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:82:63:[m[K [01;31m[Kerror: [m[K‘[01m[KVALUE1[m[K’ is not a member of ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’
+[0.971s]    82 |         command_message[static_cast<int>(tmcm1640_cmd_format::[01;31m[KVALUE1[m[K)] = VALUE_DEFAULT;
+[0.972s]       |                                                               [01;31m[K^~~~~~[m[K
+[0.972s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:83:63:[m[K [01;31m[Kerror: [m[K‘[01m[KVALUE0[m[K’ is not a member of ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’
+[0.972s]    83 |         command_message[static_cast<int>(tmcm1640_cmd_format::[01;31m[KVALUE0[m[K)] = VALUE_DEFAULT;
+[0.972s]       |                                                               [01;31m[K^~~~~~[m[K
+[0.972s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:[m[K In member function ‘[01m[Kint32_t tmcm1640::TMCM1640Connection::[01;32m[Kcommunicate[m[K(tmcm1640::tmcm1640_cmd, int, int)[m[K’:
+[0.972s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:101:63:[m[K [01;31m[Kerror: [m[K‘[01m[KCMD[m[K’ is not a member of ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’
+[0.972s]   101 |         command_message[static_cast<int>(tmcm1640_cmd_format::[01;31m[KCMD[m[K)] = cmd;
+[0.972s]       |                                                               [01;31m[K^~~[m[K
+[0.973s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:102:63:[m[K [01;31m[Kerror: [m[K‘[01m[KTYPE[m[K’ is not a member of ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’
+[0.973s]   102 |         command_message[static_cast<int>(tmcm1640_cmd_format::[01;31m[KTYPE[m[K)] = type;
+[0.973s]       |                                                               [01;31m[K^~~~[m[K
+[0.973s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:103:63:[m[K [01;31m[Kerror: [m[K‘[01m[KVALUE3[m[K’ is not a member of ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’
+[0.973s]   103 |         command_message[static_cast<int>(tmcm1640_cmd_format::[01;31m[KVALUE3[m[K)] = value >> 24;
+[0.973s]       |                                                               [01;31m[K^~~~~~[m[K
+[0.973s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:104:63:[m[K [01;31m[Kerror: [m[K‘[01m[KVALUE2[m[K’ is not a member of ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’
+[0.973s]   104 |         command_message[static_cast<int>(tmcm1640_cmd_format::[01;31m[KVALUE2[m[K)] = value >> 16;
+[0.974s]       |                                                               [01;31m[K^~~~~~[m[K
+[0.974s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:105:63:[m[K [01;31m[Kerror: [m[K‘[01m[KVALUE1[m[K’ is not a member of ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’
+[0.974s]   105 |         command_message[static_cast<int>(tmcm1640_cmd_format::[01;31m[KVALUE1[m[K)] = value >> 8;
+[0.974s]       |                                                               [01;31m[K^~~~~~[m[K
+[0.974s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:106:63:[m[K [01;31m[Kerror: [m[K‘[01m[KVALUE0[m[K’ is not a member of ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’
+[0.974s]   106 |         command_message[static_cast<int>(tmcm1640_cmd_format::[01;31m[KVALUE0[m[K)] = value;
+[0.974s]       |                                                               [01;31m[K^~~~~~[m[K
+[0.975s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:109:63:[m[K [01;31m[Kerror: [m[K‘[01m[KCHECKSUM[m[K’ is not a member of ‘[01m[Ktmcm1640::tmcm1640_cmd_format[m[K’
+[0.975s]   109 |         command_message[static_cast<int>(tmcm1640_cmd_format::[01;31m[KCHECKSUM[m[K)] = calc_checksum();
+[0.975s]       |                                                               [01;31m[K^~~~~~~~[m[K
+[0.975s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:109:89:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ktmcm1640::TMCM1640Connection::calc_checksum()[m[K’
+[0.975s]   109 |         command_message[static_cast<int>(tmcm1640_cmd_format::CHECKSUM)] = [01;31m[Kcalc_checksum()[m[K;
+[0.975s]       |                                                                            [01;31m[K~~~~~~~~~~~~~^~[m[K
+[0.975s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_connection.hpp:31:26:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kuint8_t tmcm1640::TMCM1640Connection::[01;32m[Kcalc_checksum[m[K(std::array<unsigned char, 9>)[m[K’
+[0.975s]    31 |             std::uint8_t [01;36m[Kcalc_checksum[m[K(std::array<std::uint8_t, 9> msg);
+[0.976s]       |                          [01;36m[K^~~~~~~~~~~~~[m[K
+[0.976s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_connection.hpp:31:26:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[0.976s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:[m[K In member function ‘[01m[Kbool tmcm1640::TMCM1640Connection::[01;32m[Ksend_and_receive[m[K()[m[K’:
+[0.976s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:140:28:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kstd::array<unsigned char, 9>[m[K’ to ‘[01m[Kconst void*[m[K’
+[0.976s]   140 |         write(serial_port, [01;31m[Kcommand_message[m[K, 9);
+[0.976s]       |                            [01;31m[K^~~~~~~~~~~~~~~[m[K
+[0.976s]       |                            [01;31m[K|[m[K
+[0.976s]       |                            [01;31m[Kstd::array<unsigned char, 9>[m[K
+[0.977s] In file included from [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_connection.hpp:10[m[K:
+[0.977s] [01m[K/usr/include/unistd.h:378:45:[m[K [01;36m[Knote: [m[K  initializing argument 2 of ‘[01m[Kssize_t[01;32m[K write[m[K(int, const void*, size_t)[m[K’
+[0.977s]   378 | extern ssize_t write (int __fd, [01;36m[Kconst void *__buf[m[K, size_t __n) __wur
+[0.977s]       |                                 [01;36m[K~~~~~~~~~~~~^~~~~[m[K
+[0.977s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:143:43:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kstd::array<unsigned char, 9>[m[K’ to ‘[01m[Kvoid*[m[K’
+[0.977s]   143 |         int num_bytes = read(serial_port, [01;31m[Kreply_message[m[K, 9);
+[0.977s]       |                                           [01;31m[K^~~~~~~~~~~~~[m[K
+[0.977s]       |                                           [01;31m[K|[m[K
+[0.978s]       |                                           [01;31m[Kstd::array<unsigned char, 9>[m[K
+[0.978s] [01m[K/usr/include/unistd.h:371:38:[m[K [01;36m[Knote: [m[K  initializing argument 2 of ‘[01m[Kssize_t[01;32m[K read[m[K(int, void*, size_t)[m[K’
+[0.978s]   371 | extern ssize_t read (int __fd, [01;36m[Kvoid *__buf[m[K, size_t __nbytes) __wur
+[0.978s]       |                                [01;36m[K~~~~~~^~~~~[m[K
+[0.978s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:149:18:[m[K [01;35m[Kwarning: [m[Kstatement has no effect [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+[0.978s]   149 |         else true[01;35m[K;[m[K
+[0.978s]       |                  [01;35m[K^[m[K
+[0.978s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:[m[K In member function ‘[01m[Ktmcm1640::tmcm1640_status_codes tmcm1640::TMCM1640Connection::[01;32m[Kcheck_reply[m[K()[m[K’:
+[0.979s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:165:85:[m[K [01;31m[Kerror: [m[K‘[01m[KCHECKSUM[m[K’ is not a member of ‘[01m[Ktmcm1640_reply_format[m[K’
+[0.979s]   165 |         if(!(calc_checksum == reply_message[static_cast<int>(tmcm1640_reply_format::[01;31m[KCHECKSUM[m[K)])) {
+[0.979s]       |                                                                                     [01;31m[K^~~~~~~~[m[K
+[0.979s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:172:70:[m[K [01;31m[Kerror: [m[K‘[01m[KSTATUS[m[K’ is not a member of ‘[01m[Ktmcm1640_reply_format[m[K’
+[0.979s]   172 |         return reply_message[static_cast<int>(tmcm1640_reply_format::[01;31m[KSTATUS[m[K)];
+[0.979s]       |                                                                      [01;31m[K^~~~~~[m[K
+[0.979s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:[m[K In member function ‘[01m[Kvoid tmcm1640::TMCM1640Connection::[01;32m[Kset_value[m[K()[m[K’:
+[0.979s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:176:72:[m[K [01;31m[Kerror: [m[K‘[01m[KVALUE3[m[K’ is not a member of ‘[01m[Ktmcm1640_reply_format[m[K’
+[0.980s]   176 |         value = (reply_message[static_cast<int>(tmcm1640_reply_format::[01;31m[KVALUE3[m[K)] << 24 |
+[0.980s]       |                                                                        [01;31m[K^~~~~~[m[K
+[0.980s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:177:72:[m[K [01;31m[Kerror: [m[K‘[01m[KVALUE2[m[K’ is not a member of ‘[01m[Ktmcm1640_reply_format[m[K’
+[0.980s]   177 |                  reply_message[static_cast<int>(tmcm1640_reply_format::[01;31m[KVALUE2[m[K)] << 16 |
+[0.980s]       |                                                                        [01;31m[K^~~~~~[m[K
+[0.980s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:178:72:[m[K [01;31m[Kerror: [m[K‘[01m[KVALUE1[m[K’ is not a member of ‘[01m[Ktmcm1640_reply_format[m[K’
+[0.980s]   178 |                  reply_message[static_cast<int>(tmcm1640_reply_format::[01;31m[KVALUE1[m[K)] << 8  |
+[0.980s]       |                                                                        [01;31m[K^~~~~~[m[K
+[0.981s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:179:72:[m[K [01;31m[Kerror: [m[K‘[01m[KVALUE0[m[K’ is not a member of ‘[01m[Ktmcm1640_reply_format[m[K’
+[0.981s]   179 |                  reply_message[static_cast<int>(tmcm1640_reply_format::[01;31m[KVALUE0[m[K)]);
+[0.981s]       |                                                                        [01;31m[K^~~~~~[m[K
+[1.121s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:[m[K In member function ‘[01m[Kbool tmcm1640::TMCM1640Connection::[01;32m[Ksend_and_receive[m[K()[m[K’:
+[1.121s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:150:5:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[1.121s]   150 |     [01;35m[K}[m[K
+[1.121s]       |     [01;35m[K^[m[K
+[1.138s] gmake[2]: *** [CMakeFiles/trinamic_test_node.dir/build.make:90: CMakeFiles/trinamic_test_node.dir/src/tuw_hardware_trinamic_connection.cpp.o] Error 1
+[1.138s] gmake[2]: *** Waiting for unfinished jobs....
+[3.353s] In file included from [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/test_node.cpp:6[m[K:
+[3.353s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:11:16:[m[K [01;31m[Kerror: [m[Kexpected identifier before numeric constant
+[3.353s]    11 | #define TARGET [01;31m[K1[m[K
+[3.354s]       |                [01;31m[K^[m[K
+[3.354s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:122:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KTARGET[m[K’
+[3.354s]   122 |     [01;36m[KTARGET[m[K    = 0,     // Module address
+[3.354s]       |     [01;36m[K^~~~~~[m[K
+[3.354s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:11:16:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ before numeric constant
+[3.354s]    11 | #define TARGET [01;31m[K1[m[K
+[3.354s]       |                [01;31m[K^[m[K
+[3.354s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:122:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KTARGET[m[K’
+[3.355s]   122 |     [01;36m[KTARGET[m[K    = 0,     // Module address
+[3.355s]       |     [01;36m[K^~~~~~[m[K
+[3.355s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:121:46:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[3.355s]   121 |     enum class tmcm1640_cmd_format : uint8_t [01;36m[K{[m[K
+[3.355s]       |                                              [01;36m[K^[m[K
+[3.355s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:11:16:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before numeric constant
+[3.355s]    11 | #define TARGET [01;31m[K1[m[K
+[3.355s]       |                [01;31m[K^[m[K
+[3.356s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:122:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KTARGET[m[K’
+[3.356s]   122 |     [01;36m[KTARGET[m[K    = 0,     // Module address
+[3.356s]       |     [01;36m[K^~~~~~[m[K
+[3.356s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:11:16:[m[K [01;31m[Kerror: [m[Kexpected identifier before numeric constant
+[3.356s]    11 | #define TARGET [01;31m[K1[m[K
+[3.356s]       |                [01;31m[K^[m[K
+[3.356s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:137:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KTARGET[m[K’
+[3.356s]   137 |     [01;36m[KTARGET[m[K     = 1,    // Module address
+[3.357s]       |     [01;36m[K^~~~~~[m[K
+[3.357s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:11:16:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ before numeric constant
+[3.357s]    11 | #define TARGET [01;31m[K1[m[K
+[3.357s]       |                [01;31m[K^[m[K
+[3.357s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:137:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KTARGET[m[K’
+[3.357s]   137 |     [01;36m[KTARGET[m[K     = 1,    // Module address
+[3.357s]       |     [01;36m[K^~~~~~[m[K
+[3.357s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:135:48:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[3.358s]   135 |     enum class tmcm1640_reply_format : uint8_t [01;36m[K{[m[K
+[3.358s]       |                                                [01;36m[K^[m[K
+[3.358s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:11:16:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before numeric constant
+[3.358s]    11 | #define TARGET [01;31m[K1[m[K
+[3.358s]       |                [01;31m[K^[m[K
+[3.358s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:137:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KTARGET[m[K’
+[3.358s]   137 |     [01;36m[KTARGET[m[K     = 1,    // Module address
+[3.358s]       |     [01;36m[K^~~~~~[m[K
+[3.359s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:147:5:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[3.359s]   147 |     [01;31m[K}[m[K;
+[3.359s]       |     [01;31m[K^[m[K
+[3.359s] [01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/include/tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp:150:1:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[3.359s]   150 | [01;31m[K}[m[K
+[3.359s]       | [01;31m[K^[m[K
+[4.364s] gmake[2]: *** [CMakeFiles/trinamic_test_node.dir/build.make:76: CMakeFiles/trinamic_test_node.dir/src/test_node.cpp.o] Error 1
+[4.364s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/trinamic_test_node.dir/all] Error 2
+[4.365s] gmake: *** [Makefile:146: all] Error 2
+[4.370s] Invoked command in '/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/build/tuw_hardware_trinamic_driver' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/build/tuw_hardware_trinamic_driver -- -j14 -l14

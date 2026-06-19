@@ -1,0 +1,12 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/trinamic_test_node.dir/src/test_node.cpp.o[0m
+[100%] [32m[1mLinking CXX executable trinamic_test_node[0m
+/usr/bin/ld: CMakeFiles/trinamic_test_node.dir/src/test_node.cpp.o: in function `TestNode::test_code()':
+test_node.cpp:(.text._ZN8TestNode9test_codeEv[_ZN8TestNode9test_codeEv]+0x49): undefined reference to `tmcm1640::TMCM1640Connection::TMCM1640Connection(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)'
+/usr/bin/ld: test_node.cpp:(.text._ZN8TestNode9test_codeEv[_ZN8TestNode9test_codeEv]+0x6b): undefined reference to `tmcm1640::TMCM1640Connection::communicate(tmcm1640::tmcm1640_cmd, int)'
+/usr/bin/ld: test_node.cpp:(.text._ZN8TestNode9test_codeEv[_ZN8TestNode9test_codeEv]+0xa2): undefined reference to `tmcm1640::TMCM1640Connection::communicate(tmcm1640::tmcm1640_cmd)'
+/usr/bin/ld: test_node.cpp:(.text._ZN8TestNode9test_codeEv[_ZN8TestNode9test_codeEv]+0xae): undefined reference to `tmcm1640::TMCM1640Connection::~TMCM1640Connection()'
+/usr/bin/ld: test_node.cpp:(.text._ZN8TestNode9test_codeEv[_ZN8TestNode9test_codeEv]+0x104): undefined reference to `tmcm1640::TMCM1640Connection::~TMCM1640Connection()'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/trinamic_test_node.dir/build.make:163: trinamic_test_node] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/trinamic_test_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

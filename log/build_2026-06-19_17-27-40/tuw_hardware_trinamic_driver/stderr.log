@@ -1,0 +1,16 @@
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:[m[K In member function ‘[01m[Kbool tmcm1640::TMCM1640Connection::[01;32m[Ksend_and_receive[m[K()[m[K’:
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:149:18:[m[K [01;35m[Kwarning: [m[Kstatement has no effect [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+  149 |         else true[01;35m[K;[m[K
+      |                  [01;35m[K^[m[K
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:[m[K In member function ‘[01m[Ktmcm1640::tmcm1640_status_codes tmcm1640::TMCM1640Connection::[01;32m[Kcheck_reply[m[K()[m[K’:
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:172:77:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kstd::array<unsigned char, 9>::value_type[m[K’ {aka ‘[01m[Kunsigned char[m[K’} to ‘[01m[Ktmcm1640::tmcm1640_status_codes[m[K’ in return
+  172 |  return reply_message[static_cast<int>(tmcm1640_reply_format::STATUS)[01;31m[K][m[K;
+      |                                                                      [01;31m[K^[m[K
+
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:[m[K In member function ‘[01m[Kbool tmcm1640::TMCM1640Connection::[01;32m[Ksend_and_receive[m[K()[m[K’:
+[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/tuw_hardware_trinamic_connection.cpp:150:5:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+  150 |     [01;35m[K}[m[K
+      |     [01;35m[K^[m[K
+gmake[2]: *** [CMakeFiles/trinamic_test_node.dir/build.make:90: CMakeFiles/trinamic_test_node.dir/src/tuw_hardware_trinamic_connection.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/trinamic_test_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
