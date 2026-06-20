@@ -1,7 +1,0 @@
-[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/test_node.cpp:5:10:[m[K [01;31m[Kfatal error: [m[Ktuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp: No such file or directory
-    5 | #include [01;31m[K"tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp"[m[K
-      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
-compilation terminated.
-gmake[2]: *** [CMakeFiles/trinamic_test_node.dir/build.make:76: CMakeFiles/trinamic_test_node.dir/src/test_node.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/trinamic_test_node.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2

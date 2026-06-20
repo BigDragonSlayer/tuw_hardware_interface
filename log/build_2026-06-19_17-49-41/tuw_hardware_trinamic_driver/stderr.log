@@ -1,7 +1,0 @@
-[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/test_node.cpp:[m[K In constructor ‘[01m[KTestNode::[01;32m[KTestNode[m[K()[m[K’:
-[01m[K/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/tuw_hardware_trinamic_driver/src/test_node.cpp:25:41:[m[K [01;31m[Kerror: [m[Kunable to find numeric literal operator ‘[01m[Koperator""s[m[K’
-   25 |         timer = this->create_wall_timer([01;31m[K1s[m[K, timer_callback);
-      |                                         [01;31m[K^~[m[K
-gmake[2]: *** [CMakeFiles/trinamic_test_node.dir/build.make:76: CMakeFiles/trinamic_test_node.dir/src/test_node.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/trinamic_test_node.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2
