@@ -5,6 +5,7 @@
 #include <thread>
 #include "tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp"
 #include "tuw_hardware_trinamic_driver/tuw_hardware_trinamic_connection.hpp"
+#include <cerrno>
 
 using namespace std::chrono_literals;
 
