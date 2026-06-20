@@ -1,0 +1,1 @@
+Invoking command in '/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/build/tuw_hardware_trinamic_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/build/tuw_hardware_trinamic_driver -- -j14 -l14

@@ -1,0 +1,40 @@
+[0.024s] Invoking command in '/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/build/tuw_hardware_interface_template': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/delete/tuw_hardware_interface_template -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_interface_template
+[0.046s] [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.046s]   Compatibility with CMake < 3.5 will be removed from a future version of
+[0.046s]   CMake.
+[0.046s] 
+[0.046s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[0.046s]   CMake that the project does not need compatibility with older versions.
+[0.047s] 
+[0.047s] [0m
+[0.201s] -- The C compiler identification is GNU 13.3.0
+[0.334s] -- The CXX compiler identification is GNU 13.3.0
+[0.367s] -- Detecting C compiler ABI info
+[0.538s] -- Detecting C compiler ABI info - done
+[0.554s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.555s] -- Detecting C compile features
+[0.556s] -- Detecting C compile features - done
+[0.574s] -- Detecting CXX compiler ABI info
+[0.762s] -- Detecting CXX compiler ABI info - done
+[0.785s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.786s] -- Detecting CXX compile features
+[0.787s] -- Detecting CXX compile features - done
+[0.816s] [31mCMake Error at CMakeLists.txt:8 (find_package):
+[0.816s]   By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has
+[0.816s]   asked CMake to find a package configuration file provided by "catkin", but
+[0.816s]   CMake did not find one.
+[0.816s] 
+[0.816s]   Could not find a package configuration file provided by "catkin" with any
+[0.817s]   of the following names:
+[0.817s] 
+[0.817s]     catkinConfig.cmake
+[0.817s]     catkin-config.cmake
+[0.817s] 
+[0.817s]   Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set
+[0.817s]   "catkin_DIR" to a directory containing one of the above files.  If "catkin"
+[0.817s]   provides a separate development package or SDK, be sure it has been
+[0.818s]   installed.
+[0.818s] 
+[0.818s] [0m
+[0.818s] -- Configuring incomplete, errors occurred!
+[0.824s] Invoked command in '/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/build/tuw_hardware_interface_template' returned '1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/src/delete/tuw_hardware_interface_template -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/coffee/Documents/Studium/TU/bachelorarbeit/tuw_hardware_interface/install/tuw_hardware_interface_template

@@ -5,7 +5,6 @@
 
 namespace tmcm1640 {
     TMCM1640Connection::TMCM1640Connection(std::string port) {
-        // TODO proper errors: throw exceptions instead of some dumb return
         // initialize the serial connection
         serial_port = open(port.c_str(), O_RDWR);
 
@@ -72,7 +71,17 @@ namespace tmcm1640 {
             throw std::system_error(error_code, error_message.c_str());
         }
 
+        // initalize variables
+        init_cmd_msg();
+    }
 
+    TMCM1640Connection::TMCM1640Connection(bool test_with_correct_checksum) {
+        test_mode = true;
+        correct_checksum = test_with_correct_checksum;
+        init_cmd_msg();
+    }
+
+    void TMCM1640Connection::init_cmd_msg() {
         // initialize the command_message
         command_message[static_cast<int>(tmcm1640_cmd_format::CMD_TARGET)] = TARGET;
         command_message[static_cast<int>(tmcm1640_cmd_format::TYPE)] = TYPE_DEFAULT;
@@ -108,11 +117,19 @@ namespace tmcm1640 {
         // calculate the checksum
         command_message[static_cast<int>(tmcm1640_cmd_format::CHECKSUM)] = calc_checksum(command_message);
 
-        // send the message and receive the tmcm1640's answer
-        if (!send_and_receive()) {
-            std::error_code error_code(errno, std::generic_category());
-            std::string error_message = "Communication error: could not receive reply";
-            throw std::system_error(error_code, error_message.c_str());
+        if(test_mode) {
+            if(correct_checksum) {
+                test_with_correct_checksum();
+            } else {
+                test_with_wrong_checksum();
+            }
+        } else {
+            // send the message and receive the tmcm1640's answer
+            if (!send_and_receive()) {
+                std::error_code error_code(errno, std::generic_category());
+                std::string error_message = "Communication error: could not receive reply";
+                throw std::system_error(error_code, error_message.c_str());
+            }
         }
 
         // check the reply
@@ -124,14 +141,6 @@ namespace tmcm1640 {
         }
 
         // return the value
-        return value;
-    }
-
-    std::array<std::uint8_t, 9> TMCM1640Connection::get_whole_reply() {
-        return reply_message;
-    }
-
-    int TMCM1640Connection::get_value() {
         return value;
     }
 
@@ -147,6 +156,17 @@ namespace tmcm1640 {
         }
 
         else true;
+    }
+
+    bool TMCM1640Connection::test_with_correct_checksum() {
+        reply_message = command_message; // I love the array class!
+        return true; // just copying all elements of an array to another can't fail really
+    }
+
+    bool TMCM1640Connection::test_with_wrong_checksum() {
+        reply_message = command_message;
+        reply_message[static_cast<int>(tmcm1640_reply_format::CHECKSUM)] += 1;
+        return true; // the same as above, and changing the checksum very much shouldn't be able to fail either
     }
 
     std::uint8_t TMCM1640Connection::calc_checksum(std::array<std::uint8_t, 9> msg) {

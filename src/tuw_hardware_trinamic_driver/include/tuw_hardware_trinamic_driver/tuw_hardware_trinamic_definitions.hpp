@@ -118,7 +118,7 @@ namespace tmcm1640 {
     EN_DRIVER          = 255       // Enable driver
 };
 
-    enum class tmcm1640_cmd_format : uint8_t {
+    enum class tmcm1640_cmd_format {
     CMD_TARGET    = 0,     // Module address
     CMD       = 1,     // Command number
     TYPE      = 2,     // Type number
@@ -132,7 +132,7 @@ namespace tmcm1640 {
     CHECKSUM  = 8      // Checksum
     };
 
-    enum class tmcm1640_reply_format : uint8_t {
+    enum class tmcm1640_reply_format {
     REPLY      = 0,    // Reply address
     REPLY_TARGET     = 1,    // Module address
     STATUS     = 2,    // Status
