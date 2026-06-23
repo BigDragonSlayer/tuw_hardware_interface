@@ -58,6 +58,11 @@ install(DIRECTORY
   DESTINATION include
 )
 
+install(DIRECTORY
+  test
+  DESTINATION share/${PROJECT_NAME}
+)
+
 install(TARGETS
   trinamic_test_node
   DESTINATION lib/${PROJECT_NAME}

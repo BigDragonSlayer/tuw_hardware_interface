@@ -4,7 +4,7 @@
   <name>tuw_hardware_trinamic_interface</name>
   <version>0.0.0</version>
   <description>Hardware Interface for the Trinamic TMCM1640</description>
-  <maintainer email="">BigDragonSlayer</maintainer>
+  <maintainer email="fake@email.com">BigDragonSlayer</maintainer>
   <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>

@@ -2,7 +2,7 @@
 #define TUW_HARDWARE_TRINAMIC_INTERFACE_H_
 #include "hardware_interface/system_interface.hpp"
 #include "hardware_interface/types/hardware_interface_return_values.hpp"
-#include "tuw_hardware_trinamic_driver/tuw_hardware_trinamic_connection.hpp"
+#include "tuw_hardware_trinamic_interface/tuw_hardware_trinamic_connection.hpp"
 #include <vector>
 
 namespace tuw_hardware_trinamic_interface {

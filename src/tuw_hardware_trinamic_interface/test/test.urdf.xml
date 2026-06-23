@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="TestRobot">
+  <link name="base_link">
+  </link>
+
+  <link name="wheel">
+  </link>
+
+  <joint name="test_joint" type="continuous">
+    <parent link="base_link" />
+    <child link="wheel" />
+  </joint>
+
+  <ros2_control name="TestJoint" type="system">
+    <hardware>
+      <plugin>tuw_hardware_trinamic_interface/TrinamicInterface</plugin>
+      <!--param /-->
+    </hardware>
+
+    <joint name="test_joint">
+      <param name="serial_port">/dev/ttyACM0</param>
+      <command_interface name="velocity" />
+    </joint>
+  </ros2_control>
+</robot>
