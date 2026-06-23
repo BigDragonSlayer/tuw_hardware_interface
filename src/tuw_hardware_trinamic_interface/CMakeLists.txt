@@ -12,6 +12,39 @@ find_package(ament_cmake REQUIRED)
 # find_package(<dependency> REQUIRED)
 find_package(rclcpp REQUIRED)
 
+# for the trinamic interface
+find_package(hardware_interface REQUIRED)
+find_package(pluginlib REQUIRED)
+find_package(rclcpp_lifecycle REQUIRED)
+
+add_library(tuw_hardware_trinamic_interface SHARED
+  src/tuw_hardware_trinamic_interface.cpp
+)
+
+target_include_directories(tuw_hardware_trinamic_interface PUBLIC
+  include
+)
+
+target_link_libraries(tuw_hardware_trinamic_interface PUBLIC
+  hardware_interface::hardware_interface
+  pluginlib::pluginlib
+  rclcpp::rclcpp
+  rclcpp_lifecycle::rclcpp_lifecycle
+)
+
+pluginlib_export_plugin_description_file(hardware_interface trinamic_interface.xml)
+
+install(
+  TARGETS tuw_hardware_trinamic_interface
+  DESTINATION lib
+)
+
+install(DIRECTORY
+  include
+  DESTINATION include
+)
+
+# for the testnode
 include_directories(include)
 
 add_executable(trinamic_test_node

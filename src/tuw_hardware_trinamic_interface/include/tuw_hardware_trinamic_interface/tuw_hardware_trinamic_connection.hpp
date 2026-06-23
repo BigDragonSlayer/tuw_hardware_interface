@@ -1,7 +1,7 @@
 #ifndef TUW_HARDWARE_TRINAMIC_CONNECTION_H_
 #define TUW_HARDWARE_TRINAMIC_CONNECTION_H_
 
-#include "tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp"
+#include "tuw_hardware_trinamic_interface/tuw_hardware_trinamic_definitions.hpp"
 
 // for the serial communication
 #include <fcntl.h>    // file controls like O_RDWR

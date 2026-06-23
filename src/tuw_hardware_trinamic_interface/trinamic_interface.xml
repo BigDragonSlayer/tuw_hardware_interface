@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<library path="tuw_hardware_trinamic_interface">
+  <class name="tuw_hardware_trinamic_interface/TrinamicInterface" type="tuw_hardware_trinamic_interface::TrinamicInterface" base_class_type="hardware_interface::SystemInterface">
+    <description>
+      Hardware Interface for the Trinamic TMCM1640.
+    </description>
+  </class>
+</library>
