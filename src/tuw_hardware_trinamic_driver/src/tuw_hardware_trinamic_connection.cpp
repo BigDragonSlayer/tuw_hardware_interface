@@ -2,6 +2,7 @@
 #include "tuw_hardware_trinamic_driver/tuw_hardware_trinamic_definitions.hpp"
 #include <cerrno>
 #include <boost/format.hpp>
+#include <rclcpp/rclcpp.hpp>
 
 namespace tmcm1640 {
     TMCM1640Connection::TMCM1640Connection(std::string port) {
@@ -75,9 +76,9 @@ namespace tmcm1640 {
         init_cmd_msg();
     }
 
-    TMCM1640Connection::TMCM1640Connection(bool test_with_correct_checksum) {
-        test_mode = true;
-        correct_checksum = test_with_correct_checksum;
+    TMCM1640Connection::TMCM1640Connection(bool test_mode, bool test_with_correct_checksum) {
+        this->test_mode = test_mode;
+        this->correct_checksum = test_with_correct_checksum;
         init_cmd_msg();
     }
 
@@ -94,7 +95,10 @@ namespace tmcm1640 {
 
     TMCM1640Connection::~TMCM1640Connection() {
         // close serial connection
-        close(serial_port);
+        if (!test_mode) {
+            communicate(tmcm1640_cmd::MST);
+            close(serial_port);
+        }
     }
 
     int32_t TMCM1640Connection::communicate(tmcm1640_cmd cmd) {
@@ -136,7 +140,7 @@ namespace tmcm1640 {
         uint8_t reply_status = check_reply();
         if (!(reply_status == static_cast<uint8_t>(tmcm1640_status_codes::OK)) && !(reply_status == static_cast<uint8_t>(tmcm1640_status_codes::CMD_LOADED))) { // TODO do I need CONFIG_LOCKED?
             std::error_code error_code(errno, std::generic_category());
-            std::string error_message = (boost::format("Reply wrong. Status: %i") % reply_status).str();
+            std::string error_message = "Reply wrong. Status: " + std::to_string(reply_status);
             throw std::system_error(error_code, error_message.c_str());
         }
 
@@ -155,7 +159,7 @@ namespace tmcm1640 {
             return false;
         }
 
-        else true;
+        return true;
     }
 
     bool TMCM1640Connection::test_with_correct_checksum() {
@@ -173,7 +177,7 @@ namespace tmcm1640 {
         // the algorithm from the tmcm1640's datasheet
         std::uint8_t checksum = 0;
 
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 8; i++) {
             checksum += msg[i];
         }
 
@@ -183,7 +187,7 @@ namespace tmcm1640 {
     uint8_t TMCM1640Connection::check_reply() {
         // check whether the reply has the correct checksum
         if(!(calc_checksum(reply_message) == reply_message[static_cast<int>(tmcm1640_reply_format::CHECKSUM)])) {
-            return static_cast<int>(tmcm1640_status_codes::CHECKSUM_ERROR);
+            return 7;         // Reply has wrong checksum
         }
 
         set_value();

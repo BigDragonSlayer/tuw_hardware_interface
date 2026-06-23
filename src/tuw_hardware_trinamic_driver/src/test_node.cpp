@@ -38,15 +38,42 @@ class TestNode : public rclcpp::Node {
                 return;
             }
 
-            tmcm1640::TMCM1640Connection wheel(serial_port);
-
-            wheel.communicate(tmcm1640::tmcm1640_cmd::ROR, 100);
-
-            std::this_thread::sleep_for(std::chrono::seconds(3));
-
-            wheel.communicate(tmcm1640::tmcm1640_cmd::MST);
-
             tested = true;
+
+            try{
+                tmcm1640::TMCM1640Connection wheel(serial_port);
+
+                try {
+                    wheel.communicate(tmcm1640::tmcm1640_cmd::ROR, 100);
+                } catch (std::exception &e) {
+                    RCLCPP_ERROR(this->get_logger(), "COMMUNICATION ERROR: %s", e.what());
+                }
+
+                //std::array<std::uint8_t, 9> reply = wheel.get_whole_reply();
+
+                /*for(uint8_t& el : reply) {
+                    RCLCPP_INFO(this->get_logger(), "%d", el);
+                }*/
+
+                std::this_thread::sleep_for(std::chrono::seconds(3));
+
+                /*try {
+                    wheel.communicate(tmcm1640::tmcm1640_cmd::MST);
+                } catch (std::exception &e) {
+                    RCLCPP_ERROR(this->get_logger(), "COMMUNICATION ERROR: %s", e.what());
+                }*/
+
+                //reply = wheel.get_whole_reply();
+
+                /*for(uint8_t& el : reply) {
+                    RCLCPP_INFO(this->get_logger(), "%d", el);
+                }*/
+
+            } catch (std::exception &e) {
+                RCLCPP_ERROR(this->get_logger(), "ERROR INITIALIZING THE SERIAL CONNECTION: %s", e.what());
+                return;
+            }
+
         }
 };
 

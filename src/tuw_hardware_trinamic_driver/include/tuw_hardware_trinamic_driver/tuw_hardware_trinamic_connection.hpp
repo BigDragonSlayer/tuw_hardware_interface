@@ -13,22 +13,21 @@
 #include <array>
 #include <string>
 
-// möglicherweise cstdint?
 namespace tmcm1640 {
     class TMCM1640Connection {
         public:
             TMCM1640Connection(std::string port);
-            TMCM1640Connection(bool test_with_correct_checksum);
+            TMCM1640Connection(bool test_mode, bool test_with_correct_checksum);
             ~TMCM1640Connection();
 
             int32_t communicate(tmcm1640_cmd cmd);
             int32_t communicate(tmcm1640_cmd cmd, int value);
             int32_t communicate(tmcm1640_cmd cmd, int type, int value);
-            std::array<std::uint8_t, 9> get_whole_reply();
-            int32_t get_value();
-            bool get_test_mode();
-            bool get_checksum_mode();
-            bool set_checksum_mode();
+            std::array<std::uint8_t, 9> get_whole_reply() {return reply_message; }
+            int32_t get_value() { return value; }
+            bool get_test_mode() { return test_mode; }
+            bool get_checksum_mode() { return correct_checksum; }
+            void set_checksum_mode(bool test_with_correct_checksum) { correct_checksum = test_with_correct_checksum; }
 
         private:
             void init_cmd_msg();

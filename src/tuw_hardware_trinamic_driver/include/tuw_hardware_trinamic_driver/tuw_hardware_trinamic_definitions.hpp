@@ -48,6 +48,8 @@ namespace tmcm1640 {
     FirmwareVersion = 27
 };
 
+    // Caution: only values the TMCM1640's reply will have
+    // If the reply itself has a wrong checksum, TMCM1640Communication::check_reply() will return 7
     enum class tmcm1640_status_codes : std::uint8_t {
         OK             = 100,       // Successfully executed, no error
         CMD_LOADED     = 101,       // Command loaded into TMCL program EEPROM
