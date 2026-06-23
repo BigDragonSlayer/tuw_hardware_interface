@@ -1,6 +1,0 @@
-name: joint
-id: 0
-diameter: 0.1
-connection: { port: "port", baudrate: 123, protocol: 2.0 }
-hardware:   { package: "tuw_hardware_interface_template", path: "test/resources/description/generic_joint_description_hardware_test.yaml" }
-config:     { package: "tuw_hardware_interface_template", path: "test/resources/description/generic_joint_description_config_test.yaml" }

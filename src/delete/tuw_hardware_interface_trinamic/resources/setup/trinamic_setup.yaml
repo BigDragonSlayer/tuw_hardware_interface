@@ -1,8 +1,0 @@
-setup: test_setup
-joints:
-  - name: trinamic_joint
-    id: 0
-    diameter: 0.108
-    connection: { port: "/dev/ttyACM0", baudrate: 57600 }
-    hardware:   { package: "tuw_hardware_interface_trinamic", path: "resources/hardware/TMCM-1640.yaml" }
-    config:     { package: "tuw_hardware_interface_trinamic", path: "resources/config/TMCM-1640.yaml" }

@@ -1,7 +1,0 @@
-setup: test_setup
-joints:
-  - name: dynamixel_test_joint
-    id: 0
-    connection: { port: "/dev/ttyUSB0", baudrate: 57600, protocol: 2.0 }
-    hardware:   { package: "tuw_hardware_interface_dynamixel", path: "resources/hardware/MX-106.yaml" }
-    config:     { package: "tuw_hardware_interface_dynamixel", path: "resources/config/MX-106.yaml" }
