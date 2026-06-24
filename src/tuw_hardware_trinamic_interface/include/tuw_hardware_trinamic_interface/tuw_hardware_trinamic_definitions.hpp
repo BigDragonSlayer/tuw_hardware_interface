@@ -5,7 +5,6 @@
 
 // TODO format properly, in such a way, that it's easier to find stuff
 
-#define DIAMETER 0.108
 #define MOTOR_NUMBER 0
 #define TYPE_DEFAULT 0
 #define TARGET 1

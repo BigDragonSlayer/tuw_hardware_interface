@@ -23,16 +23,16 @@ namespace tuw_hardware_trinamic_interface {
             // the system's parameters
             bool test_mode = false;
             double wheel_diameter = 0.108; // unit: [m]
+            bool fast_mode = true;
 
             // the hardware
-            std::vector<std::string> serial_ports;
             std::vector<tmcm1640::TMCM1640Connection> wheels;
 
             // methods to convert the different velocity units
             // converts the command velocity [m/s] to the velocity expected by the TMCM1640 [rpm]
-            int cmd_vel_to_rmp(double vel);
+            int32_t cmd_vel_to_rpm(double vel);
             // converts the wheel's velocity [rpm] to the expected velocity of the state interface [m/s]
-            double wheel_vel_to_mps(int vel);
+            double wheel_vel_to_mps(int32_t vel);
     };
 }
 

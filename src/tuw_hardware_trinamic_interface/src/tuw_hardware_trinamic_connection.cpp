@@ -5,7 +5,7 @@
 #include <rclcpp/rclcpp.hpp>
 
 namespace tmcm1640 {
-    TMCM1640Connection::TMCM1640Connection(std::string port) {
+    TMCM1640Connection::TMCM1640Connection(std::string port, std::string name) {
         // initialize the serial connection
         serial_port = open(port.c_str(), O_RDWR);
 
@@ -73,12 +73,14 @@ namespace tmcm1640 {
         }
 
         // initalize variables
+        this->name = name;
         init_cmd_msg();
     }
 
-    TMCM1640Connection::TMCM1640Connection(bool test_mode, bool test_with_correct_checksum) {
+    TMCM1640Connection::TMCM1640Connection(bool test_mode, std::string name, bool test_with_correct_checksum) {
         this->test_mode = test_mode;
         this->correct_checksum = test_with_correct_checksum;
+        this->name = name;
         init_cmd_msg();
     }
 
@@ -105,11 +107,11 @@ namespace tmcm1640 {
         return communicate(cmd, TYPE_DEFAULT, VALUE_DEFAULT);
     }
 
-    int32_t TMCM1640Connection::communicate(tmcm1640_cmd cmd, int value) {
+    int32_t TMCM1640Connection::communicate(tmcm1640_cmd cmd, int32_t value) {
         return communicate(cmd, TYPE_DEFAULT, value);
     }
 
-    int32_t TMCM1640Connection::communicate(tmcm1640_cmd cmd, int type, int value) {
+    int32_t TMCM1640Connection::communicate(tmcm1640_cmd cmd, int type, int32_t value) {
         // update the command_message
         command_message[static_cast<int>(tmcm1640_cmd_format::CMD)] = static_cast<uint8_t>(cmd);
         command_message[static_cast<int>(tmcm1640_cmd_format::TYPE)] = type;
@@ -163,12 +165,22 @@ namespace tmcm1640 {
     }
 
     bool TMCM1640Connection::test_with_correct_checksum() {
-        reply_message = command_message; // I love the array class!
+        // return a proper reply message
+        reply_message[static_cast<int>(tmcm1640_reply_format::CMD)] = command_message[static_cast<int>(tmcm1640_cmd_format::CMD)];
+        reply_message[static_cast<int>(tmcm1640_reply_format::REPLY_TARGET)] = command_message[static_cast<int>(tmcm1640_cmd_format::CMD_TARGET)];
+        reply_message[static_cast<int>(tmcm1640_reply_format::VALUE3)] = command_message[static_cast<int>(tmcm1640_cmd_format::VALUE3)];
+        reply_message[static_cast<int>(tmcm1640_reply_format::VALUE2)] = command_message[static_cast<int>(tmcm1640_cmd_format::VALUE2)];
+        reply_message[static_cast<int>(tmcm1640_reply_format::VALUE1)] = command_message[static_cast<int>(tmcm1640_cmd_format::VALUE1)];
+        reply_message[static_cast<int>(tmcm1640_reply_format::VALUE0)] = command_message[static_cast<int>(tmcm1640_cmd_format::VALUE0)];
+        reply_message[static_cast<int>(tmcm1640_reply_format::REPLY)] = 0;
+        reply_message[static_cast<int>(tmcm1640_reply_format::STATUS)] = static_cast<int>(tmcm1640_status_codes::OK);
+        reply_message[static_cast<int>(tmcm1640_reply_format::CHECKSUM)] = calc_checksum(reply_message);
         return true; // just copying all elements of an array to another can't fail really
     }
 
     bool TMCM1640Connection::test_with_wrong_checksum() {
-        reply_message = command_message;
+        // return a proper reply message
+        test_with_correct_checksum();
         reply_message[static_cast<int>(tmcm1640_reply_format::CHECKSUM)] += 1;
         return true; // the same as above, and changing the checksum very much shouldn't be able to fail either
     }

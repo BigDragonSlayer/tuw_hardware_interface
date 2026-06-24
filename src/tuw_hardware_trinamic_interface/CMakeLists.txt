@@ -19,6 +19,7 @@ find_package(rclcpp_lifecycle REQUIRED)
 
 add_library(tuw_hardware_trinamic_interface SHARED
   src/tuw_hardware_trinamic_interface.cpp
+  src/tuw_hardware_trinamic_connection.cpp
 )
 
 target_include_directories(tuw_hardware_trinamic_interface PUBLIC

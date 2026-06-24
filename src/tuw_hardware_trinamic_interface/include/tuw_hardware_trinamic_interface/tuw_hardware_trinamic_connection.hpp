@@ -16,18 +16,19 @@
 namespace tmcm1640 {
     class TMCM1640Connection {
         public:
-            TMCM1640Connection(std::string port);
-            TMCM1640Connection(bool test_mode, bool test_with_correct_checksum);
+            TMCM1640Connection(std::string port, std::string name);
+            TMCM1640Connection(bool test_mode, std::string name, bool test_with_correct_checksum);
             ~TMCM1640Connection();
 
             int32_t communicate(tmcm1640_cmd cmd);
-            int32_t communicate(tmcm1640_cmd cmd, int value);
-            int32_t communicate(tmcm1640_cmd cmd, int type, int value);
+            int32_t communicate(tmcm1640_cmd cmd, int32_t value);
+            int32_t communicate(tmcm1640_cmd cmd, int type, int32_t value);
             std::array<std::uint8_t, 9> get_whole_reply() {return reply_message; }
             int32_t get_value() { return value; }
             bool get_test_mode() { return test_mode; }
             bool get_checksum_mode() { return correct_checksum; }
             void set_checksum_mode(bool test_with_correct_checksum) { correct_checksum = test_with_correct_checksum; }
+            std::string get_name() { return name; }
 
         private:
             void init_cmd_msg();
@@ -44,6 +45,7 @@ namespace tmcm1640 {
             int serial_port;
             bool test_mode = false;
             bool correct_checksum;
+            std::string name;
     };
 }
 

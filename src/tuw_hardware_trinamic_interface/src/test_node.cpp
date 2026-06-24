@@ -41,7 +41,7 @@ class TestNode : public rclcpp::Node {
             tested = true;
 
             try{
-                tmcm1640::TMCM1640Connection wheel(serial_port);
+                tmcm1640::TMCM1640Connection wheel(serial_port, "test_wheel");
 
                 try {
                     wheel.communicate(tmcm1640::tmcm1640_cmd::ROR, 100);
