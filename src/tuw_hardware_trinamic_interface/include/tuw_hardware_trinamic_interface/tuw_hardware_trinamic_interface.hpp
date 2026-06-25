@@ -4,7 +4,6 @@
 #include "hardware_interface/types/hardware_interface_return_values.hpp"
 #include "tuw_hardware_trinamic_interface/tuw_hardware_trinamic_connection.hpp"
 #include <vector>
-#include <memory>
 
 namespace tuw_hardware_trinamic_interface {
 
@@ -31,7 +30,7 @@ namespace tuw_hardware_trinamic_interface {
             bool fast_mode = true;
 
             // the hardware
-            std::vector<std::shared_ptr<tmcm1640::TMCM1640Connection>> wheels;
+            std::vector<tmcm1640::TMCM1640Connection *> wheels;
 
             // methods to convert the different velocity units
             // converts the command velocity [m/s] to the velocity expected by the TMCM1640 [rpm]
