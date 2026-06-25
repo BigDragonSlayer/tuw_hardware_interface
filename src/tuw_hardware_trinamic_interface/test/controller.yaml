@@ -1,0 +1,12 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 10
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+test_joint_controller:
+  ros__parameters:
+    type: one_joint_velocity_controller/OneJointVelocityController
+
+    joint: "test_joint"

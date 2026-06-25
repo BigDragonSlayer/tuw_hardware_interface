@@ -14,8 +14,9 @@
   <ros2_control name="TestJoint" type="system">
     <hardware>
       <plugin>tuw_hardware_trinamic_interface/TrinamicInterface</plugin>
-      <param name="test_mode">true</param>
+      <param name="test_mode">false</param>
       <param name="wheel_diameter">0.1</param>
+      <param name="fast_mode">true</param>
     </hardware>
 
     <joint name="test_joint">

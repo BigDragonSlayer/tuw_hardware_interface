@@ -52,14 +52,15 @@ namespace tuw_hardware_trinamic_interface {
         // setup communication with robot hardware
         if(test_mode) {
             for (int i = 0; i < get_hardware_info().joints.size(); i++) {
-                tmcm1640::TMCM1640Connection wheel(test_mode, get_hardware_info().joints[i].name, true);
+                std::shared_ptr<tmcm1640::TMCM1640Connection> wheel = std::make_shared<tmcm1640::TMCM1640Connection>(test_mode, get_hardware_info().joints[i].name, true);
                 wheels.push_back(wheel);
             }
         } else {
 
             for (auto joint : get_hardware_info().joints) {
                 try {
-                    tmcm1640::TMCM1640Connection wheel(joint.parameters.find("serial_port")->second, joint.name);
+                    std::shared_ptr<tmcm1640::TMCM1640Connection> wheel = std::make_shared<tmcm1640::TMCM1640Connection>(joint.parameters.find("serial_port")->second, joint.name);
+                    //wheel.communicate(tmcm1640::tmcm1640_cmd::MST);
                     wheels.push_back(wheel);
                 } catch(std::exception &e) {
                     RCLCPP_ERROR(this->get_node()->get_logger(), "ERROR INITIALIZING THE SERIAL CONNECTION OF JOINT \"%s\": %s", joint.name.c_str(), e.what());
@@ -79,10 +80,15 @@ namespace tuw_hardware_trinamic_interface {
         }
 
         // write initial values of MST to wheels and get correct value
-        for(auto wheel : wheels) {
-            int32_t val = wheel.communicate(tmcm1640::tmcm1640_cmd::MST);
-            if(val != 0) {
-                RCLCPP_ERROR(this->get_node()->get_logger(), "Couldn't initialize wheel %s: Got value %d instead of 0", wheel.get_name(), val);
+        for(int i = 0; i < wheels.size(); i++) {
+            try {
+                int32_t val = wheels[i]->communicate(tmcm1640::tmcm1640_cmd::MST);
+                if(val != 0) {
+                    RCLCPP_ERROR(this->get_node()->get_logger(), "Couldn't initialize wheel %s: Got value %d instead of 0", wheels[i]->get_name(), val);
+                    return hardware_interface::CallbackReturn::ERROR;
+                }
+            } catch (std::exception &e) {
+                RCLCPP_ERROR(this->get_logger(), "COMMUNICATION ERROR: %s", e.what());
                 return hardware_interface::CallbackReturn::ERROR;
             }
         }
@@ -94,35 +100,76 @@ namespace tuw_hardware_trinamic_interface {
     hardware_interface::return_type TrinamicInterface::read(const rclcpp::Time &time, const rclcpp::Duration &period) {
         // write values from hardware to state interfaces
         // fast mode: Assumption: the value is the same value as was received by the last reply
-        /*for(auto wheel : wheels) {
-            set_state(wheel.name + "/velocity", wheel_vel_to_mps(wheel.get_value()));
-            }*/
+        if(fast_mode) {
+            return hardware_interface::return_type::OK;
+        }
 
+        // TODO fix accurate mode
         // accurate mode: always getting the newest value from the hardware
         for(auto wheel : wheels) {
             // in normal mode the value sent to the hardware doesn't matter, in test mode the value will be mirrored
-            int32_t val = wheel.communicate(tmcm1640::tmcm1640_cmd::GAP, static_cast<int>(tmcm1640::tmcm1640_axis_params::ACTUAL_VEL), wheel.get_value());
-            set_state(wheel.get_name() + "/velocity", wheel_vel_to_mps(val));
+            try {
+                int32_t val = wheel->communicate(tmcm1640::tmcm1640_cmd::GAP, static_cast<int>(tmcm1640::tmcm1640_axis_params::ACTUAL_VEL), wheel->get_value());
+                set_state(wheel->get_name() + "/velocity", wheel_vel_to_mps(val));
+            } catch (std::exception &e) {
+                RCLCPP_ERROR(this->get_node()->get_logger(), "COMMUNICATION ERROR: %s", e.what());
+                return hardware_interface::return_type::ERROR;
+            }
         }
         return hardware_interface::return_type::OK;
     }
 
     hardware_interface::return_type TrinamicInterface::write(const rclcpp::Time &time, const rclcpp::Duration &period) {
-        // TODO write values from command interfaces to hardware
-
         for(auto wheel : wheels) {
-            double cmd = get_command(wheel.get_name() + "/velocity");
+            double cmd = get_command(wheel->get_name() + "/velocity");
             int32_t val;
             if (cmd == 0.0) {
-                val = wheel.communicate(tmcm1640::tmcm1640_cmd::MST);
+                try {
+                    val = wheel->communicate(tmcm1640::tmcm1640_cmd::MST);
+                } catch (std::exception &e) {
+                    RCLCPP_ERROR(this->get_node()->get_logger(), "COMMUNICATION ERROR: %s", e.what());
+                    return hardware_interface::return_type::ERROR;
+                }
             } else {
-                val = wheel.communicate(tmcm1640::tmcm1640_cmd::ROR, cmd_vel_to_rpm(cmd));
+                try {
+                    val = wheel->communicate(tmcm1640::tmcm1640_cmd::ROR, cmd_vel_to_rpm(cmd));
+                } catch (std::exception &e) {
+                    RCLCPP_ERROR(this->get_node()->get_logger(), "COMMUNICATION ERROR: %s", e.what());
+                    return hardware_interface::return_type::ERROR;
+                }
             }
 
-            set_state(wheel.get_name() + "/velocity", wheel_vel_to_mps(val));
+            if(fast_mode) {
+                set_state(wheel->get_name() + "/velocity", wheel_vel_to_mps(val));
+            }
         }
 
         return hardware_interface::return_type::OK;
+    }
+
+    hardware_interface::CallbackReturn TrinamicInterface::on_cleanup(const rclcpp_lifecycle::State &previous_state) {
+        RCLCPP_INFO(this->get_node()->get_logger(), "cleaning things up");
+        //for(auto wheel : wheels) {
+            //wheel->~TMCM1640Connection();
+        //}
+
+        return hardware_interface::CallbackReturn::SUCCESS;
+    }
+
+    hardware_interface::CallbackReturn TrinamicInterface::on_shutdown(const rclcpp_lifecycle::State &previous_state) {
+        RCLCPP_INFO(this->get_node()->get_logger(), "shutting things down");
+
+        //for(int i = 0; i < wheels.size(); i++) {
+            //delete wheels[i];
+        //}
+
+        //for(std::vector<tmcm1640::TMCM1640Connection*>::iterator i = wheels.begin(), e = wheels.end(); i != e; ++i) {
+            //delete (*i);
+        //}
+
+        //for(auto wheel : wheels) {
+            //wheel->~TMCM1640Connection();
+        //}
     }
 
     int32_t TrinamicInterface::cmd_vel_to_rpm(double vel) {

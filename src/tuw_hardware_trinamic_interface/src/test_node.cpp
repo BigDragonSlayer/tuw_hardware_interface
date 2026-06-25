@@ -6,6 +6,8 @@
 #include "tuw_hardware_trinamic_interface/tuw_hardware_trinamic_definitions.hpp"
 #include "tuw_hardware_trinamic_interface/tuw_hardware_trinamic_connection.hpp"
 #include <cerrno>
+#include <memory>
+#include <vector>
 
 using namespace std::chrono_literals;
 
@@ -22,7 +24,7 @@ class TestNode : public rclcpp::Node {
             std::vector<rclcpp::Parameter> new_parameters{rclcpp::Parameter("serial_port", "")};
             this->set_parameters(new_parameters);
 
-            test_code();
+            test_ptr();
         };
 
         timer = this->create_wall_timer(1000ms, timer_callback);
@@ -33,11 +35,30 @@ class TestNode : public rclcpp::Node {
         bool tested = false;
         rclcpp::TimerBase::SharedPtr timer;
 
+        void test_ptr() {
+            if(serial_port.compare("") == 0) {
+                return;
+            }
+
+            RCLCPP_INFO(this->get_logger(), "in test_ptr");
+
+            std::vector<std::shared_ptr<tmcm1640::TMCM1640Connection>> wheels;
+
+            {
+            std::shared_ptr<tmcm1640::TMCM1640Connection> wheel = std::make_shared<tmcm1640::TMCM1640Connection>(serial_port, "test_wheel");
+            wheels.push_back(wheel);
+            }
+
+            wheels[0]->communicate(tmcm1640::tmcm1640_cmd::ROR, 100);
+            std::this_thread::sleep_for(std::chrono::seconds(3));
+        }
+
         void test_code() {
             if(serial_port.compare("") == 0 || tested) {
                 return;
             }
 
+            RCLCPP_INFO(this->get_logger(), "in test_code");
             tested = true;
 
             try{
@@ -57,11 +78,11 @@ class TestNode : public rclcpp::Node {
 
                 std::this_thread::sleep_for(std::chrono::seconds(3));
 
-                /*try {
+                try {
                     wheel.communicate(tmcm1640::tmcm1640_cmd::MST);
                 } catch (std::exception &e) {
                     RCLCPP_ERROR(this->get_logger(), "COMMUNICATION ERROR: %s", e.what());
-                }*/
+                }
 
                 //reply = wheel.get_whole_reply();
 
