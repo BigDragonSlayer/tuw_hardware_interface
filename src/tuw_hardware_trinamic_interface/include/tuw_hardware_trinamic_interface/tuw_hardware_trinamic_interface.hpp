@@ -4,6 +4,7 @@
 #include "hardware_interface/types/hardware_interface_return_values.hpp"
 #include "tuw_hardware_trinamic_interface/tuw_hardware_trinamic_connection.hpp"
 #include <vector>
+#include <memory>
 
 namespace tuw_hardware_trinamic_interface {
 
@@ -18,9 +19,9 @@ namespace tuw_hardware_trinamic_interface {
             // overriding a HardwareComponentInterface method
             hardware_interface::return_type write(const rclcpp::Time &time, const rclcpp::Duration &period) override;
             // overriding a LifecycleNodeInterface method
-            hardware_interface::CallbackReturn on_cleanup(const rclcpp_lifecycle::State &previous_state);
+            //hardware_interface::CallbackReturn on_cleanup(const rclcpp_lifecycle::State &previous_state);
             // overriding a LifecycleNodeInterface method
-            hardware_interface::CallbackReturn on_shutdown(const rclcpp_lifecycle::State &previous_state);
+            //hardware_interface::CallbackReturn on_shutdown(const rclcpp_lifecycle::State &previous_state);
 
 
         private:
@@ -30,7 +31,7 @@ namespace tuw_hardware_trinamic_interface {
             bool fast_mode = true;
 
             // the hardware
-            std::vector<tmcm1640::TMCM1640Connection *> wheels;
+            std::vector<std::shared_ptr<tmcm1640::TMCM1640Connection>> wheels;
 
             // methods to convert the different velocity units
             // converts the command velocity [m/s] to the velocity expected by the TMCM1640 [rpm]

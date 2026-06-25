@@ -52,14 +52,14 @@ namespace tuw_hardware_trinamic_interface {
         // setup communication with robot hardware
         if(test_mode) {
             for (int i = 0; i < get_hardware_info().joints.size(); i++) {
-                tmcm1640::TMCM1640Connection* wheel = new tmcm1640::TMCM1640Connection(test_mode, get_hardware_info().joints[i].name, true);
+                std::shared_ptr<tmcm1640::TMCM1640Connection> wheel = std::make_shared<tmcm1640::TMCM1640Connection>(test_mode, get_hardware_info().joints[i].name, true);
                 wheels.push_back(wheel);
             }
         } else {
 
             for (auto joint : get_hardware_info().joints) {
                 try {
-                    tmcm1640::TMCM1640Connection* wheel = new tmcm1640::TMCM1640Connection(joint.parameters.find("serial_port")->second, joint.name);
+                    std::shared_ptr<tmcm1640::TMCM1640Connection> wheel = std::make_shared<tmcm1640::TMCM1640Connection>(joint.parameters.find("serial_port")->second, joint.name);
                     //wheel.communicate(tmcm1640::tmcm1640_cmd::MST);
                     wheels.push_back(wheel);
                 } catch(std::exception &e) {
@@ -147,16 +147,16 @@ namespace tuw_hardware_trinamic_interface {
         return hardware_interface::return_type::OK;
     }
 
-    hardware_interface::CallbackReturn TrinamicInterface::on_cleanup(const rclcpp_lifecycle::State &previous_state) {
+    /*hardware_interface::CallbackReturn TrinamicInterface::on_cleanup(const rclcpp_lifecycle::State &previous_state) {
         RCLCPP_INFO(this->get_node()->get_logger(), "cleaning things up");
         for(auto wheel : wheels) {
             wheel->~TMCM1640Connection();
         }
 
         return hardware_interface::CallbackReturn::SUCCESS;
-    }
+    }*/
 
-    hardware_interface::CallbackReturn TrinamicInterface::on_shutdown(const rclcpp_lifecycle::State &previous_state) {
+    /*hardware_interface::CallbackReturn TrinamicInterface::on_shutdown(const rclcpp_lifecycle::State &previous_state) {
         RCLCPP_INFO(this->get_node()->get_logger(), "shutting things down");
 
         //for(int i = 0; i < wheels.size(); i++) {
@@ -172,7 +172,7 @@ namespace tuw_hardware_trinamic_interface {
         }
 
         return hardware_interface::CallbackReturn::SUCCESS;
-    }
+    }*/
 
     int32_t TrinamicInterface::cmd_vel_to_rpm(double vel) {
         return vel*60/(M_PI*wheel_diameter);
