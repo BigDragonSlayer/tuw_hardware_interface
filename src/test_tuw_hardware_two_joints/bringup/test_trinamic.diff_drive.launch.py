@@ -17,7 +17,7 @@ def generate_launch_description():
     yaml = PathJoinSubstitution([
         FindPackageShare('test_tuw_hardware_two_joints'),
         'bringup',
-        'test_trinamic.no_controller.yaml'
+        'test_trinamic.diff_drive_controller.yaml'
     ])
 
 
