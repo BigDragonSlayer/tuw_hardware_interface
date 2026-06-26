@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="TestRobot">
+  <link name="base_link">
+  </link>
+
+  <link name="left_link">
+  </link>
+
+  <link name="right_link">
+  </link>
+
+  <link name="extra_link">
+  </link>
+
+  <joint name="left_trinamic_joint" type="continuous">
+    <parent link="base_link" />
+    <child link="left_link" />
+  </joint>
+
+  <joint name="right_trinamic_joint" type="continuous">
+    <parent link="base_link" />
+    <child link="right_link" />
+  </joint>
+
+  <!-- this joint should not be used by the test system(s) -->
+  <joint name="extra_joint" type="continuous">
+    <parent link="base_link" />
+    <child link="extra_link" />
+  </joint>
+
+  <ros2_control name="TestTrinamicTwoJoints" type="system">
+    <hardware>
+      <plugin>tuw_hardware_trinamic_interface/TrinamicInterface</plugin>
+      <param name="test_mode">true</param>
+    </hardware>
+
+    <joint name="left_trinamic_joint">
+      <param name="serial_port">/dev/ttyACM0</param>
+      <command_interface name="velocity" />
+      <state_interface name="velocity" />
+    </joint>
+
+    <joint name="right_trinamic_joint">
+      <param name="serial_port">/dev/ttyACM1</param>
+      <command_interface name="velocity" />
+      <state_interface name="velocity" />
+    </joint>
+  </ros2_control>
+</robot>

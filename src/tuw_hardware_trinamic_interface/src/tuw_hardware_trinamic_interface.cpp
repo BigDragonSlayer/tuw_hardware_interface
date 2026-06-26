@@ -147,33 +147,6 @@ namespace tuw_hardware_trinamic_interface {
         return hardware_interface::return_type::OK;
     }
 
-    /*hardware_interface::CallbackReturn TrinamicInterface::on_cleanup(const rclcpp_lifecycle::State &previous_state) {
-        RCLCPP_INFO(this->get_node()->get_logger(), "cleaning things up");
-        for(auto wheel : wheels) {
-            wheel->~TMCM1640Connection();
-        }
-
-        return hardware_interface::CallbackReturn::SUCCESS;
-    }*/
-
-    /*hardware_interface::CallbackReturn TrinamicInterface::on_shutdown(const rclcpp_lifecycle::State &previous_state) {
-        RCLCPP_INFO(this->get_node()->get_logger(), "shutting things down");
-
-        //for(int i = 0; i < wheels.size(); i++) {
-            //delete wheels[i];
-        //}
-
-        //for(std::vector<tmcm1640::TMCM1640Connection*>::iterator i = wheels.begin(), e = wheels.end(); i != e; ++i) {
-            //delete (*i);
-        //}
-
-        for(auto wheel : wheels) {
-            wheel->~TMCM1640Connection();
-        }
-
-        return hardware_interface::CallbackReturn::SUCCESS;
-    }*/
-
     int32_t TrinamicInterface::cmd_vel_to_rpm(double vel) {
         return vel*60/(M_PI*wheel_diameter);
     }
