@@ -31,7 +31,6 @@
   <ros2_control name="TestTrinamicTwoJoints" type="system">
     <hardware>
       <plugin>tuw_hardware_trinamic_interface/TrinamicInterface</plugin>
-      <param name="test_mode">true</param>
     </hardware>
 
     <joint name="left_trinamic_joint">
